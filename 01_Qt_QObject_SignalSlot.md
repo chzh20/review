@@ -1457,3 +1457,60 @@ deleteLater 提供事件驱动的安全延迟销毁
 ```
 
 最终，Qt 用这套机制把普通 C++ 对象扩展成适合 GUI、事件循环、跨线程通信和动态 UI 系统的框架级对象模型。
+
+
+
+下面是一段适合**面试 3 分钟内口述**的文稿，内容比 2 分钟版更完整，覆盖 `QObject / Q_OBJECT / moc / 元对象系统 / connect / emit / Direct / Queued / parent-child / deleteLater` 等重点。
+
+***
+
+## 面试 3 分钟回答稿：Qt signal/slot 机制
+
+Qt 的 signal/slot 机制，本质上是 Qt 基于 `QObject`、`Q_OBJECT`、moc 和元对象系统实现的一套**对象间解耦通信机制**，它不是简单的 C++ callback。
+
+首先，Qt 中的 `signals`、`slots`、`emit` 并不是 C++ 原生关键字，而是 Qt 定义的宏。真正让 signal/slot 工作的是 `Q_OBJECT` 宏和 moc。一个类如果继承自 `QObject`，并且声明了 signal、slot、`Q_PROPERTY` 或需要使用元对象能力，就需要加 `Q_OBJECT`。moc 会扫描这个类，生成对应的元对象代码，比如 `staticMetaObject`、`qt_metacall()`、`qt_static_metacall()`，以及 signal 函数体。
+
+比如我们声明一个信号：
+
+```cpp
+signals:
+    void valueChanged(int value);
+```
+
+这个函数我们并没有自己实现，它的函数体是 moc 生成的。生成后的逻辑大致是：把参数放进一个 `void* argv[]` 数组，然后调用：
+
+```cpp
+QMetaObject::activate(this, &staticMetaObject, signal_index, argv);
+```
+
+所以 `emit valueChanged(10)` 本质上就是调用这个 moc 生成的普通成员函数，然后进入 `QMetaObject::activate()`。
+
+`connect()` 的作用是建立连接关系。Qt 内部会记录 sender、signal index、receiver、slot method index、连接类型、参数类型、receiver 所在线程等信息，并保存到 `QObjectPrivate` 的连接表中。等 signal 发出时，`QMetaObject::activate()` 会根据 signal index 找到所有连接到这个 signal 的 slot，然后按连接顺序依次触发。
+
+连接类型是 signal/slot 机制里很重要的一点。默认是 `Qt::AutoConnection`。如果 sender 和 receiver 在同一个线程，通常会退化成 `DirectConnection`，也就是 signal 发出时立即调用 slot，slot 运行在 emit 所在线程，属于同步调用。如果 sender 和 receiver 在不同线程，通常会变成 `QueuedConnection`。这时 Qt 不会立即调用 slot，而是把这次调用封装成一个 `QMetaCallEvent`，通过 `QCoreApplication::postEvent()` 投递到 receiver 所属线程的事件队列里，等 receiver 所在线程的 event loop 处理时再调用 slot。所以跨线程 signal/slot 的本质是事件投递。
+
+QueuedConnection 依赖元对象系统非常明显。因为跨线程调用时，signal 发出后当前栈帧很快就结束了，参数地址不能直接保存，所以 Qt 必须知道参数类型，然后通过 `QMetaType` 拷贝参数到事件对象中。因此如果 queued connection 传递自定义类型，通常需要 `qRegisterMetaType<MyType>()`，否则 Qt 可能不知道如何拷贝和析构这个参数。
+
+Qt5 以后的新 connect 语法：
+
+```cpp
+connect(sender, &Sender::valueChanged,
+        receiver, &Receiver::onValueChanged);
+```
+
+相比旧的 `SIGNAL()`、`SLOT()` 字符串语法，优点是可以做编译期类型检查，避免函数名写错或参数不匹配。但即使用新语法，signal 的触发、连接表管理、queued connection、跨线程事件投递，仍然依赖 QObject 和元对象系统。
+
+另外，signal/slot 和 QObject 生命周期管理也结合得很紧。`QObject` 析构时，会自动断开所有与它相关的连接，包括它作为 sender 发出的连接，以及它作为 receiver 接收的连接，所以可以避免 slot 指向已经销毁的对象。同时 QObject 还有 parent-child 内存管理机制，parent 析构时会自动 delete 所有 children，child 析构时也会从 parent 的 children list 中移除。
+
+跨线程删除 QObject 时要特别小心，不能在错误线程直接 `delete`。因为 QObject 有 thread affinity，pending event、queued signal、timer 都和对象所属线程有关。更安全的方式是调用 `deleteLater()`，它会投递一个 deferred delete event，让对象所属线程的 event loop 在安全时机删除对象。典型 worker 线程写法是：worker 完成后发出 `finished()`，连接到 `worker->deleteLater()`，同时连接到 `thread->quit()`，最后 `thread->finished()` 再连接到 `thread->deleteLater()`。
+
+所以总结来说，Qt 的 signal/slot 不是普通 callback，而是一套基于元对象系统的运行时通信机制。它支持对象解耦、一对多连接、运行时查找、参数类型管理、跨线程事件投递、自动断连和 QObject 生命周期管理，这也是 Qt 在 GUI 和多线程场景下非常常用 signal/slot 的原因。
+
+***
+
+## 如果最后要补一句总结
+
+可以用这句收尾：
+
+> 简单说，`emit` 只是入口，真正的核心是 moc 生成的 signal 函数调用 `QMetaObject::activate()`，再通过 QObject 内部连接表找到 slot；同线程直接调用，跨线程投递事件，生命周期由 QObject 的自动断连、parent-child 和 `deleteLater()` 机制保证。
+
