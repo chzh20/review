@@ -1,20 +1,20 @@
 下面是 **C++ 内存管理与智能指针** 的面试提炼版，重点覆盖：
 
-* `malloc/free`
-* `new/delete`
-* `new[]/delete[]`
-* placement new
-* RAII
-* `unique_ptr`
-* `shared_ptr`
-* `weak_ptr`
-* 循环引用
-* 对象生命周期
-* 常见内存错误
+- `malloc/free`
+- `new/delete`
+- `new[]/delete[]`
+- placement new
+- RAII
+- `unique_ptr`
+- `shared_ptr`
+- `weak_ptr`
+- 循环引用
+- 对象生命周期
+- 常见内存错误
 
-这些内容也是 `huihut/interview` C/C++ 部分的高频主题，包括 `malloc/calloc/realloc/alloca`、`new/delete`、placement new、`delete this`、智能指针、`shared_ptr`、`unique_ptr`、`weak_ptr` 等。 [\[CMU 15-213...P - CS自学指南\]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
+这些内容也是 `huihut/interview` C/C++ 部分的高频主题，包括 `malloc/calloc/realloc/alloca`、`new/delete`、placement new、`delete this`、智能指针、`shared_ptr`、`unique_ptr`、`weak_ptr` 等。 [[CMU 15-213...P - CS自学指南]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
 
-***
+---
 
 # 1. C/C++ 内存区域
 
@@ -25,7 +25,7 @@
 3. 全局变量、静态变量、字符串常量分别放在哪里？
 4. 野指针、悬空指针、内存泄漏分别是什么？
 
-***
+---
 
 ## 1.1 程序常见内存布局
 
@@ -49,9 +49,9 @@
 低地址
 ```
 
-仓库链接装载库部分也整理了栈、堆、可执行文件映像、保留区，以及 `.text`、`.data`、`.bss`、`.rodata` 等目标文件段。 [\[CMU 15-213...P - CS自学指南\]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
+仓库链接装载库部分也整理了栈、堆、可执行文件映像、保留区，以及 `.text`、`.data`、`.bss`、`.rodata` 等目标文件段。 [[CMU 15-213...P - CS自学指南]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
 
-***
+---
 
 ## 1.2 示例
 
@@ -80,7 +80,7 @@ int main() {
 }
 ```
 
-***
+---
 
 # 2. `malloc/free`
 
@@ -94,7 +94,7 @@ int main() {
 6. `free(nullptr)` 合法吗？
 7. `malloc/free` 会调用构造和析构函数吗？
 
-***
+---
 
 ## 2.1 `malloc/free` 基本用法
 
@@ -121,7 +121,7 @@ int main() {
 `malloc` 只负责分配一块原始内存，不会调用构造函数。  
 `free` 只负责释放内存，不会调用析构函数。
 
-***
+---
 
 ## 2.2 `malloc` vs `calloc`
 
@@ -143,13 +143,15 @@ int main() {
 
 区别：
 
-| 函数                       | 含义                  |
-| ------------------------ | ------------------- |
-| `malloc(size)`           | 分配 size 字节，内容未初始化   |
-| `calloc(n, size)`        | 分配 n \* size 字节，并清零 |
-| `realloc(ptr, new_size)` | 调整已有内存大小，可能搬迁       |
 
-***
+| 函数                       | 含义                |
+| ------------------------ | ----------------- |
+| `malloc(size)`           | 分配 size 字节，内容未初始化 |
+| `calloc(n, size)`        | 分配 n size 字节，并清零  |
+| `realloc(ptr, new_size)` | 调整已有内存大小，可能搬迁     |
+
+
+---
 
 ## 2.3 `realloc` 风险
 
@@ -176,7 +178,7 @@ if (new_p) {
 }
 ```
 
-***
+---
 
 ## 2.4 `malloc(0)`
 
@@ -186,12 +188,12 @@ void* p = std::malloc(0);
 
 标准允许它返回：
 
-* `nullptr`
-* 或者一个不能解引用但可以传给 `free` 的非空指针
+- `nullptr`
+- 或者一个不能解引用但可以传给 `free` 的非空指针
 
 所以不要依赖 `malloc(0)` 的具体行为。
 
-***
+---
 
 ## 2.5 `free(nullptr)` 合法
 
@@ -202,7 +204,7 @@ std::free(p); // ok
 
 和 `delete nullptr` 一样，都是安全的。
 
-***
+---
 
 # 3. `new/delete`
 
@@ -215,9 +217,9 @@ std::free(p); // ok
 5. `delete nullptr` 合法吗？
 6. 为什么 `new[]` 必须配 `delete[]`？
 
-仓库中也总结：`new/new[]` 先分配内存再调用构造函数，`delete/delete[]` 先调用析构函数再释放空间。 [\[CMU 15-213...P - CS自学指南\]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
+仓库中也总结：`new/new[]` 先分配内存再调用构造函数，`delete/delete[]` 先调用析构函数再释放空间。 [[CMU 15-213...P - CS自学指南]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
 
-***
+---
 
 ## 3.1 `new/delete` 基本过程
 
@@ -249,9 +251,10 @@ A ctor
 A dtor
 ```
 
-***
+---
 
 ## 3.2 `new/delete` vs `malloc/free`
+
 
 | 对比点  | `malloc/free` | `new/delete`              |
 | ---- | ------------- | ------------------------- |
@@ -263,7 +266,8 @@ A dtor
 | 失败行为 | 返回 `nullptr`  | 默认抛 `std::bad_alloc`      |
 | 重载   | 不能按类重载        | 可重载 `operator new/delete` |
 
-***
+
+---
 
 ## 3.3 `new` 失败
 
@@ -291,7 +295,7 @@ if (!p) {
 }
 ```
 
-***
+---
 
 # 4. `new[]` / `delete[]`
 
@@ -301,7 +305,7 @@ if (!p) {
 2. `delete` 和 `delete[]` 混用有什么问题？
 3. 数组对象析构时如何知道调用几次析构？
 
-***
+---
 
 ## 4.1 正确用法
 
@@ -337,7 +341,7 @@ dtor
 dtor
 ```
 
-***
+---
 
 ## 4.2 错误用法
 
@@ -351,12 +355,12 @@ delete arr; // 错误，应使用 delete[]
 
 原因：
 
-* `new[]` 分配的是数组对象；
-* 运行时通常需要记录数组元素个数；
-* `delete[]` 才会逐个调用析构函数；
-* `delete` 只按单个对象处理。
+- `new[]` 分配的是数组对象；
+- 运行时通常需要记录数组元素个数；
+- `delete[]` 才会逐个调用析构函数；
+- `delete` 只按单个对象处理。
 
-***
+---
 
 # 5. placement new
 
@@ -368,7 +372,7 @@ delete arr; // 错误，应使用 delete[]
 4. placement new 适合哪些场景？
 5. placement new 和普通 new 有什么区别？
 
-***
+---
 
 ## 5.1 基本概念
 
@@ -401,24 +405,24 @@ int main() {
 }
 ```
 
-***
+---
 
 ## 5.2 placement new 特点
 
-* 不分配内存；
-* 只调用构造函数；
-* 对象销毁时需要手动调用析构函数；
-* 原始内存是否释放，由用户自己负责。
+- 不分配内存；
+- 只调用构造函数；
+- 对象销毁时需要手动调用析构函数；
+- 原始内存是否释放，由用户自己负责。
 
 常见场景：
 
-* 内存池；
-* 对象池；
-* 自定义 allocator；
-* 高性能场景避免频繁堆分配；
-* 在共享内存/固定 buffer 上构造对象。
+- 内存池；
+- 对象池；
+- 自定义 allocator；
+- 高性能场景避免频繁堆分配；
+- 在共享内存/固定 buffer 上构造对象。
 
-***
+---
 
 # 6. RAII
 
@@ -430,7 +434,7 @@ int main() {
 4. 常见 RAII 类有哪些？
 5. 如何自己写一个 RAII 类？
 
-***
+---
 
 ## 6.1 RAII 核心思想
 
@@ -442,7 +446,7 @@ RAII：Resource Acquisition Is Initialization。
 
 这样可以确保即使发生异常，栈展开时析构函数也会自动释放资源。
 
-***
+---
 
 ## 6.2 不使用 RAII 的问题
 
@@ -458,7 +462,7 @@ void f() {
 }
 ```
 
-***
+---
 
 ## 6.3 使用 RAII
 
@@ -477,7 +481,7 @@ void f() {
 
 发生异常时，`unique_ptr` 析构，自动释放内存。
 
-***
+---
 
 ## 6.4 自定义 RAII 类
 
@@ -509,12 +513,12 @@ private:
 
 关键点：
 
-* 构造函数获取资源；
-* 析构函数释放资源；
-* 禁止拷贝，避免重复释放；
-* 必要时支持移动。
+- 构造函数获取资源；
+- 析构函数释放资源；
+- 禁止拷贝，避免重复释放；
+- 必要时支持移动。
 
-***
+---
 
 # 7. 三五零法则
 
@@ -526,15 +530,15 @@ private:
 4. 为什么有析构函数时通常要考虑拷贝构造和赋值？
 5. 什么时候应该禁用拷贝？
 
-***
+---
 
 ## 7.1 Rule of Three
 
 如果类自己管理资源，并定义了以下任意一个：
 
-* 析构函数；
-* 拷贝构造函数；
-* 拷贝赋值运算符；
+- 析构函数；
+- 拷贝构造函数；
+- 拷贝赋值运算符；
 
 通常需要同时考虑另外两个。
 
@@ -575,14 +579,14 @@ private:
 };
 ```
 
-***
+---
 
 ## 7.2 Rule of Five
 
 C++11 后还要考虑：
 
-* 移动构造函数；
-* 移动赋值运算符。
+- 移动构造函数；
+- 移动赋值运算符。
 
 ```cpp
 class Buffer {
@@ -638,7 +642,7 @@ private:
 };
 ```
 
-***
+---
 
 ## 7.3 Rule of Zero
 
@@ -661,7 +665,7 @@ private:
 
 这样不需要手写析构、拷贝、移动，交给编译器和标准库。
 
-***
+---
 
 # 8. `unique_ptr`
 
@@ -674,7 +678,7 @@ private:
 5. `unique_ptr` 如何管理数组？
 6. `unique_ptr` 支持自定义删除器吗？
 
-***
+---
 
 ## 8.1 基本特点
 
@@ -693,7 +697,7 @@ int main() {
 
 离开作用域时自动释放。
 
-***
+---
 
 ## 8.2 不能拷贝，只能移动
 
@@ -709,7 +713,7 @@ if (!p1) {
 }
 ```
 
-***
+---
 
 ## 8.3 函数返回 `unique_ptr`
 
@@ -727,7 +731,7 @@ int main() {
 
 这是表达资源所有权转移的好方式。
 
-***
+---
 
 ## 8.4 管理数组
 
@@ -737,7 +741,7 @@ std::unique_ptr<int[]> arr = std::make_unique<int[]>(10);
 arr[0] = 1;
 ```
 
-***
+---
 
 ## 8.5 自定义删除器
 
@@ -759,7 +763,7 @@ int main() {
 }
 ```
 
-***
+---
 
 # 9. `shared_ptr`
 
@@ -773,9 +777,9 @@ int main() {
 6. 为什么不要用同一个裸指针构造多个 `shared_ptr`？
 7. `shared_ptr` 循环引用是什么？
 
-仓库中总结：`shared_ptr` 实现共享所有权，多个智能指针指向同一对象，对象会在最后一个 reference 被销毁时释放。 [\[CMU 15-213...P - CS自学指南\]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
+仓库中总结：`shared_ptr` 实现共享所有权，多个智能指针指向同一对象，对象会在最后一个 reference 被销毁时释放。 [[CMU 15-213...P - CS自学指南]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
 
-***
+---
 
 ## 9.1 基本用法
 
@@ -808,7 +812,7 @@ int main() {
 
 离开 `main` 时，最后一个 `shared_ptr` 析构，对象释放。
 
-***
+---
 
 ## 9.2 控制块
 
@@ -830,7 +834,7 @@ shared_ptr 本体:
 +----------------+
 ```
 
-***
+---
 
 ## 9.3 `make_shared` vs `shared_ptr<T>(new T)`
 
@@ -854,10 +858,10 @@ std::shared_ptr<A> p(new A);
 
 但也有注意点：
 
-* 如果对象很大，并且还有 `weak_ptr` 存活，对象内存可能要等控制块一起释放；
-* 需要自定义删除器时，不能直接用 `make_shared` 指定删除器。
+- 如果对象很大，并且还有 `weak_ptr` 存活，对象内存可能要等控制块一起释放；
+- 需要自定义删除器时，不能直接用 `make_shared` 指定删除器。
 
-***
+---
 
 ## 9.4 错误：同一个裸指针构造多个 `shared_ptr`
 
@@ -877,7 +881,7 @@ auto p1 = std::make_shared<A>();
 auto p2 = p1;
 ```
 
-***
+---
 
 ## 9.5 `shared_ptr` 线程安全问题
 
@@ -903,7 +907,7 @@ auto p = std::make_shared<int>(0);
 
 需要加锁或使用原子类型。
 
-***
+---
 
 # 10. `weak_ptr`
 
@@ -915,9 +919,9 @@ auto p = std::make_shared<int>(0);
 4. `weak_ptr` 如何解决循环引用？
 5. `expired()` 和 `lock()` 有什么区别？
 
-仓库中总结：`weak_ptr` 共享但不拥有对象，可用于打破 `shared_ptr` 循环引用。 [\[CMU 15-213...P - CS自学指南\]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
+仓库中总结：`weak_ptr` 共享但不拥有对象，可用于打破 `shared_ptr` 循环引用。 [[CMU 15-213...P - CS自学指南]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
 
-***
+---
 
 ## 10.1 基本用法
 
@@ -955,7 +959,7 @@ auto sp = wp.lock();
 
 如果对象已释放，`lock()` 返回空 `shared_ptr`。
 
-***
+---
 
 # 11. 循环引用
 
@@ -966,7 +970,7 @@ auto sp = wp.lock();
 3. 如何用 `weak_ptr` 解决？
 4. 父子关系中谁用 `shared_ptr`，谁用 `weak_ptr`？
 
-***
+---
 
 ## 11.1 错误示例：循环引用
 
@@ -1020,7 +1024,7 @@ B 仍被 A::b 持有
 二者引用计数都不为 0
 ```
 
-***
+---
 
 ## 11.2 正确示例：用 `weak_ptr` 打破环
 
@@ -1066,11 +1070,11 @@ int main() {
 
 经验规则：
 
-* 拥有关系用 `shared_ptr` 或 `unique_ptr`；
-* 非拥有观察关系用 `weak_ptr` 或裸指针/引用；
-* 父拥有子，子观察父：父到子用 `shared_ptr/unique_ptr`，子到父用 `weak_ptr`。
+- 拥有关系用 `shared_ptr` 或 `unique_ptr`；
+- 非拥有观察关系用 `weak_ptr` 或裸指针/引用；
+- 父拥有子，子观察父：父到子用 `shared_ptr/unique_ptr`，子到父用 `weak_ptr`。
 
-***
+---
 
 # 12. `enable_shared_from_this`
 
@@ -1080,7 +1084,7 @@ int main() {
 2. `enable_shared_from_this` 解决什么问题？
 3. `shared_from_this()` 使用前提是什么？
 
-***
+---
 
 ## 12.1 错误示例
 
@@ -1100,7 +1104,7 @@ int main() {
 }
 ```
 
-***
+---
 
 ## 12.2 正确做法
 
@@ -1138,7 +1142,7 @@ A a;
 
 > 当前对象已经被某个 `shared_ptr` 正确管理。
 
-***
+---
 
 # 13. `delete this`
 
@@ -1149,9 +1153,9 @@ A a;
 3. `delete this` 后还能访问成员吗？
 4. Qt/回调/异步场景中为什么要小心对象自删除？
 
-仓库中也列出了 `delete this` 合法但需要确保对象由 `new` 创建，且之后不能再访问该对象等条件。 [\[CMU 15-213...P - CS自学指南\]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
+仓库中也列出了 `delete this` 合法但需要确保对象由 `new` 创建，且之后不能再访问该对象等条件。 [[CMU 15-213...P - CS自学指南]](https://csdiy.wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/CSAPP/#_1)
 
-***
+---
 
 ## 13.1 示例
 
@@ -1174,7 +1178,7 @@ int main() {
 }
 ```
 
-***
+---
 
 ## 13.2 必须满足
 
@@ -1188,7 +1192,7 @@ int main() {
 6. `delete this` 后不再访问任何成员；
 7. 外部也不再访问该对象。
 
-***
+---
 
 # 14. 常见内存错误
 
@@ -1201,7 +1205,7 @@ int main() {
 5. 什么是越界访问？
 6. 如何排查内存问题？
 
-***
+---
 
 ## 14.1 内存泄漏
 
@@ -1220,7 +1224,7 @@ void noLeak() {
 }
 ```
 
-***
+---
 
 ## 14.2 悬空指针
 
@@ -1244,7 +1248,7 @@ p = nullptr;
 auto p = std::make_unique<int>(10);
 ```
 
-***
+---
 
 ## 14.3 重复释放
 
@@ -1257,7 +1261,7 @@ delete p; // 错误，double free
 
 智能指针可以避免大部分这类问题。
 
-***
+---
 
 ## 14.4 越界访问
 
@@ -1276,11 +1280,12 @@ std::vector<int> arr(3);
 arr.at(3) = 10; // 抛异常，便于发现错误
 ```
 
-***
+---
 
 # 15. 面试高频对比总结
 
 ## 15.1 `unique_ptr` vs `shared_ptr` vs `weak_ptr`
+
 
 | 智能指针         | 所有权 | 是否可拷贝    | 典型场景        |
 | ------------ | --- | -------- | ----------- |
@@ -1288,7 +1293,8 @@ arr.at(3) = 10; // 抛异常，便于发现错误
 | `shared_ptr` | 共享  | 可拷贝      | 多方共享生命周期    |
 | `weak_ptr`   | 不拥有 | 可拷贝      | 观察对象，打破循环引用 |
 
-***
+
+---
 
 ## 15.2 什么时候用哪个？
 
@@ -1301,7 +1307,7 @@ arr.at(3) = 10; // 抛异常，便于发现错误
 非拥有且生命周期明确时，可以用裸指针/引用
 ```
 
-***
+---
 
 ## 15.3 不要滥用 `shared_ptr`
 
@@ -1313,11 +1319,11 @@ std::shared_ptr<T> everywhere;
 
 问题：
 
-* 所有权不清晰；
-* 更容易产生循环引用；
-* 引用计数有开销；
-* 生命周期变得不可控；
-* 难以判断对象何时释放。
+- 所有权不清晰；
+- 更容易产生循环引用；
+- 引用计数有开销；
+- 生命周期变得不可控；
+- 难以判断对象何时释放。
 
 更好的设计：
 
@@ -1328,7 +1334,7 @@ private:
 };
 ```
 
-***
+---
 
 # 16. 面试代码题
 
@@ -1371,7 +1377,7 @@ ctor
 dtor
 ```
 
-***
+---
 
 ## 题 2：哪里有问题？
 
@@ -1393,7 +1399,7 @@ new[] 必须配 delete[]
 delete[] p;
 ```
 
-***
+---
 
 ## 题 3：哪里有问题？
 
@@ -1418,7 +1424,7 @@ auto p1 = std::make_shared<A>();
 auto p2 = p1;
 ```
 
-***
+---
 
 ## 题 4：循环引用如何修？
 
@@ -1444,41 +1450,42 @@ public:
 };
 ```
 
-***
+---
 
 # 17. 面试速记版
 
 ## 内存管理
 
-* `malloc/free` 是 C 函数，只分配/释放原始内存，不调用构造析构。
-* `new/delete` 是 C++ 运算符，分配内存并构造对象，析构对象并释放内存。
-* `new[]` 必须配 `delete[]`。
-* `placement new` 不分配内存，只在指定地址构造对象。
-* `delete nullptr` 和 `free(nullptr)` 都安全。
-* 内存泄漏、重复释放、越界访问、use-after-free 都是未定义行为风险。
+- `malloc/free` 是 C 函数，只分配/释放原始内存，不调用构造析构。
+- `new/delete` 是 C++ 运算符，分配内存并构造对象，析构对象并释放内存。
+- `new[]` 必须配 `delete[]`。
+- `placement new` 不分配内存，只在指定地址构造对象。
+- `delete nullptr` 和 `free(nullptr)` 都安全。
+- 内存泄漏、重复释放、越界访问、use-after-free 都是未定义行为风险。
 
-***
+---
 
 ## RAII
 
-* 资源生命周期绑定对象生命周期。
-* 构造获取资源，析构释放资源。
-* 异常安全的核心手段。
-* 标准库中 `string`、`vector`、`unique_ptr`、`shared_ptr`、`lock_guard` 都是 RAII 思想。
+- 资源生命周期绑定对象生命周期。
+- 构造获取资源，析构释放资源。
+- 异常安全的核心手段。
+- 标准库中 `string`、`vector`、`unique_ptr`、`shared_ptr`、`lock_guard` 都是 RAII 思想。
 
-***
+---
 
 ## 智能指针
 
-* `unique_ptr`：独占所有权，默认首选。
-* `shared_ptr`：共享所有权，最后一个引用释放资源。
-* `weak_ptr`：弱引用，不拥有对象，用于观察和打破循环引用。
-* `make_unique` / `make_shared` 优先于裸 `new`。
-* 不要用同一个裸指针构造多个 `shared_ptr`。
-* `shared_ptr` 的引用计数安全不代表对象访问线程安全。
+- `unique_ptr`：独占所有权，默认首选。
+- `shared_ptr`：共享所有权，最后一个引用释放资源。
+- `weak_ptr`：弱引用，不拥有对象，用于观察和打破循环引用。
+- `make_unique` / `make_shared` 优先于裸 `new`。
+- 不要用同一个裸指针构造多个 `shared_ptr`。
+- `shared_ptr` 的引用计数安全不代表对象访问线程安全。
 
-***
+---
 
 如果继续下一块，我建议讲：
 
-> **STL 容器与底层实现：vector/list/deque/map/unordered\_map、迭代器失效、红黑树、哈希表、allocator。**
+> **STL 容器与底层实现：vector/list/deque/map/unorderedmap、迭代器失效、红黑树、哈希表、allocator。**
+
