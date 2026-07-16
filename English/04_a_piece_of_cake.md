@@ -174,7 +174,9 @@
 **Richard:** No.
 
 **Marilyn:** <u>You are in great shape.</u> <u>I can't believe it.</u> Grandpa, Ellen, Philip, Robbie, you and me... that's six. 
+
 **Richard:** Don't forget Susan, seven.
+
 **Marilyn:** Cooking dinner for the entire family is not so easy. Shopping: salad, tomatoes, lettuce, cucumbers, and onions. The main course: steak and potatoes. Richard, how much broccoli do I need for seven people?  
 *发音：* grea[t] shape | can'[t] believe | tha[t] is | no[t] so | main⌒course
 
