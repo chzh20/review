@@ -130,6 +130,7 @@
 
 **Richard:** Everything. The American scene, people, places, events.
 
+
 **Jack Davis:** Did you ever think of(schwa) **photographing** an **aerobics** class?  
 *发音：* think⌒of(schwa) | pho⚡ographin[g]
 
@@ -260,6 +261,8 @@
 | **photograph** | /ˈfoʊtəɡræf/ | v. | 拍摄 | **photograph** an event |
 | **advertising** | /ˈædvərtaɪzɪŋ/ | n. | 广告宣传 | photos for **advertising** |
 | **groceries** | /ˈɡroʊsəriz/ | n. | 食品杂货 | shop for **groceries**；go grocery shopping |
+| **the American scene** |  | n. | 美国社会风貌、人文景观、生活百态 |  |
+| **events** |  | n. | 活动、新闻、赛事等 |  |
 
 ---
 
