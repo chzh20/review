@@ -144,8 +144,9 @@
 **Jack Davis:** I need some good photos for my **advertising**, Mr. Stewart. Maybe you can **photograph** a class and I can give you and Mrs. Stewart a month of(schwa) classes free.  
 *发音：* for(schwa) my | month⌒of(schwa)
 
-**Richard:** What, can I **photograph** a class anytime? About today?
-
+**Richard:** When can I **photograph** a class?
+**Jack Davis:** anytime? 
+**Richard:**  How about today?
 **Jack Davis:** <u>Terrific.</u>
 
 ---
@@ -157,7 +158,7 @@
 
 **Richard:** Yes, I went t(schwa) the **aerobics** class today.
 
-**Marilyn:** What's wrong with you? Do... do you... do...
+**Marilyn:** What's wrong with you? 
 
 **Richard:** Nothing. I am in excellent health. I have ideal blood pressure, a perfect heart. <u>In other words</u>, I'm in wonderful condition.  
 *发音：* excellen[t] | perfec[t] | in⌒other⌒words
@@ -172,7 +173,9 @@
 
 **Richard:** No.
 
-**Marilyn:** <u>You are in great shape.</u> <u>I can't believe it.</u> Grandpa, Ellen, Philip, Robbie, you and me... that's six. Don't forget Susan, seven. Cooking dinner for the entire family is not so easy. Shopping: salad, tomatoes, lettuce, cucumbers, and onions. The main course: steak and potatoes. Richard, how much broccoli do I need for seven people?  
+**Marilyn:** <u>You are in great shape.</u> <u>I can't believe it.</u> Grandpa, Ellen, Philip, Robbie, you and me... that's six. 
+**Richard:** Don't forget Susan, seven.
+**Marilyn:** Cooking dinner for the entire family is not so easy. Shopping: salad, tomatoes, lettuce, cucumbers, and onions. The main course: steak and potatoes. Richard, how much broccoli do I need for seven people?  
 *发音：* grea[t] shape | can'[t] believe | tha[t] is | no[t] so | main⌒course
 
 **Richard:** Marilyn, I have t(schwa) tell you something.  
