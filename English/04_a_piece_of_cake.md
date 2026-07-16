@@ -350,7 +350,11 @@
 
 - **课文原句：** It's **gonna** be a piece of cake.
 - **说明：** 非正式口语；书面写作应使用 going to。
+- 
+### 7. think of doing something
 
+- **课文原句：** Did you ever think of photographing an aerobics class.
+- **说明：** think of + 名词 / 动名词(-ing)。想到,想过,考虑过
 ---
 
 ## ❓ 第五部分：学习问题（Study Questions）
