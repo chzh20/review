@@ -130,6 +130,7 @@
 
 **Richard:** Everything. The American scene, people, places, events.
 
+
 **Jack Davis:** Did you ever think of(schwa) **photographing** an **aerobics** class?  
 *发音：* think⌒of(schwa) | pho⚡ographin[g]
 
@@ -143,8 +144,9 @@
 **Jack Davis:** I need some good photos for my **advertising**, Mr. Stewart. Maybe you can **photograph** a class and I can give you and Mrs. Stewart a month of(schwa) classes free.  
 *发音：* for(schwa) my | month⌒of(schwa)
 
-**Richard:** What, can I **photograph** a class anytime? About today?
-
+**Richard:** When can I **photograph** a class?
+**Jack Davis:** anytime? 
+**Richard:**  How about today?
 **Jack Davis:** <u>Terrific.</u>
 
 ---
@@ -156,7 +158,7 @@
 
 **Richard:** Yes, I went t(schwa) the **aerobics** class today.
 
-**Marilyn:** What's wrong with you? Do... do you... do...
+**Marilyn:** What's wrong with you? 
 
 **Richard:** Nothing. I am in excellent health. I have ideal blood pressure, a perfect heart. <u>In other words</u>, I'm in wonderful condition.  
 *发音：* excellen[t] | perfec[t] | in⌒other⌒words
@@ -171,7 +173,11 @@
 
 **Richard:** No.
 
-**Marilyn:** <u>You are in great shape.</u> <u>I can't believe it.</u> Grandpa, Ellen, Philip, Robbie, you and me... that's six. Don't forget Susan, seven. Cooking dinner for the entire family is not so easy. Shopping: salad, tomatoes, lettuce, cucumbers, and onions. The main course: steak and potatoes. Richard, how much broccoli do I need for seven people?  
+**Marilyn:** <u>You are in great shape.</u> <u>I can't believe it.</u> Grandpa, Ellen, Philip, Robbie, you and me... that's six. 
+
+**Richard:** Don't forget Susan, seven.
+
+**Marilyn:** Cooking dinner for the entire family is not so easy. Shopping: salad, tomatoes, lettuce, cucumbers, and onions. The main course: steak and potatoes. Richard, how much broccoli do I need for seven people?  
 *发音：* grea[t] shape | can'[t] believe | tha[t] is | no[t] so | main⌒course
 
 **Richard:** Marilyn, I have t(schwa) tell you something.  
@@ -260,6 +266,8 @@
 | **photograph** | /ˈfoʊtəɡræf/ | v. | 拍摄 | **photograph** an event |
 | **advertising** | /ˈædvərtaɪzɪŋ/ | n. | 广告宣传 | photos for **advertising** |
 | **groceries** | /ˈɡroʊsəriz/ | n. | 食品杂货 | shop for **groceries**；go grocery shopping |
+| **the American scene** |  | n. | 美国社会风貌、人文景观、生活百态 |  |
+| **events** |  | n. | 活动、新闻、赛事等 |  |
 
 ---
 
@@ -347,7 +355,11 @@
 
 - **课文原句：** It's **gonna** be a piece of cake.
 - **说明：** 非正式口语；书面写作应使用 going to。
+- 
+### 7. think of doing something
 
+- **课文原句：** Did you ever think of photographing an aerobics class.
+- **说明：** think of + 名词 / 动名词(-ing)。想到,想过,考虑过
 ---
 
 ## ❓ 第五部分：学习问题（Study Questions）
