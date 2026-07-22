@@ -203,6 +203,15 @@ class SamplingConfig:
 
 函数调用时，形参名称绑定到实参当前引用的对象。函数可以修改共享的可变对象，但不能通过重新绑定形参来改变调用方名称的绑定。
 
+
+注释：
+
+函数调用时，形参和实参名称指向同一个对象。
+
+修改共享的可变对象（如 append）会影响调用方；
+
+重新给形参赋值只改变局部绑定，不影响调用方变量。
+
 ```python
 def append_eos(token_ids: list[int]) -> None:
     token_ids.append(2)
@@ -212,6 +221,30 @@ tokens = [100, 200]
 append_eos(tokens)
 assert tokens == [100, 200, 2]
 ```
+list 是可变对象，append() 修改原来的 list。它没有让 token_ids 指向另一个 list，而是改变了两个名称共同引用的对象。
+
+进入函数:
+```python
+tokens ───────┐
+              ↓
+        list A [100, 200]
+              ↑
+token_ids ────┘
+```
+执行 token_ids.append(2)
+
+```python
+tokens ───────┐
+              ↓
+           list A [100, 200, 2]
+              ↑
+token_ids ────┘
+```
+变化的是 list A 的内部内容.这就是：函数可以修改共享的可变对象。
+
+同样的情况也适用于 dict、set、普通类实例、PyTorch Tensor 和 nn.Module 等可变对象。
+
+### 重新绑定形参对调用方不可见
 
 ```python
 def replace_tokens(token_ids: list[int]) -> None:
@@ -222,6 +255,75 @@ tokens = [100, 200]
 replace_tokens(tokens)
 assert tokens == [100, 200]
 ```
+
+token_ids = [2] 它没有修改原来的 list，而是：
+1.创建一个新 list [2]；
+
+2.将函数局部名称 token_ids 重新绑定到新 list；
+
+3.调用方名称 tokens 仍然绑定到原 list
+
+执行 token_ids = [2] 后
+
+``` python
+tokens ─────────> list A [100, 200]
+token_ids ──────> list B [2]
+```
+token_ids 和 tokens 是两个不同作用域中的名称。改变 token_ids 的绑定，不会改变 tokens 的绑定
+
+不能通过重新绑定形参来改变调用方名称的绑定.
+
+
+
+### 不可变对象表现如何
+考虑整数：
+``` python
+def increment(value: int) -> None:
+    value += 1
+
+
+count = 10
+increment(count)
+
+assert count == 10
+
+```
+int 是不可变对象，不能原地把整数对象 10 改成 11。
+
+字符串和 tuple 也类似：
+``` python
+def add_suffix(text: str) -> None:
+    text += " world"
+
+
+message = "hello"
+add_suffix(message)
+
+assert message == "hello"
+
+```
+特别指出，tuple 的结构不可变，但它引用的整个对象图**不一定**不可变。
+
+```python
+def update_config(config: tuple[float, list[int]]) -> None:
+    config[1].append(3)
+
+
+sampling = (0.8, [1, 2])
+update_config(sampling)
+
+assert sampling == (0.8, [1, 2, 3])
+```
+对象关系：
+
+``` python
+sampling ──> tuple
+             ├──> float 0.8
+             └──> list [1, 2]
+                       ↑
+函数通过 config[1] 修改这个 list
+```
+
 
 ### 工程实践建议
 
