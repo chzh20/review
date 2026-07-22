@@ -158,15 +158,60 @@ assert copied is not original
 
 ### 原理
 
-可变对象可在身份不变时修改内部状态。典型可变对象包括 list、dict、set、普通类实例、Tensor 和 nn.Module。典型不可变对象包括 int、float、str、bytes、tuple 和 frozenset。
+可变对象可在**身份不变**时修改内部状态。 
+即：
 
-但 tuple 的结构不可变，不代表它引用的整个对象图不可变：
+1.对象身份(identity)没变
+2.对象内容(state)变了
+
+```python
+a = [1, 2] #内存关系a ────> list A [1,2]
+a.append(3) #a ────> list A [1,2,3]
+id(a) # 没有变化
+```
+
+典型可变对象包括 list、dict、set、普通类实例、Tensor 和 nn.Module。
+
+不可变对象不是修改对象，而是重新绑定名称(rebinding)
+
+```python
+x = 10 # x binding to object 10
+x +=1 #  x rebinding to object 11
+```
+
+典型不可变对象包括 int、float、str、bytes、tuple 和 frozenset。
+
+**“不可变（immutable）”只保证对象自身的结构不能变，不保证它引用的其它对象不能变.**
+
+
+例如tuple 的结构不可变，不代表它引用的整个对象图不可变：
 
 ```python
 config = (0.8, [1, 2])
 config[1].append(3)
 assert config == (0.8, [1, 2, 3])
 ```
+
+对象图(Object Graph) 是对象之间形成的引用网络
+
+```python
+config = (
+    0.8,
+    [1,2],
+    {"top_k": 20}
+)
+
+```
+对象图
+```python
+tuple
+├── float
+├── list
+│   └── 1,2
+└── dict
+    └── top_k=20
+```
+
 
 ### 常见坑
 
@@ -178,15 +223,23 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class BadConfig:
     stop_token_ids: list[int]
+
+cfg = BadConfig([1,2])
+
+cfg.stop_token_ids.append(3) # still can change the value
 ```
+
+推荐
+``` python
+@dataclass(frozen=True, slots=True)
+class SamplingConfig:
+    stop_token_ids: tuple[int, ...] = () # list 变为tuple
+
+```
+这样配置对象才更接近真正的不可变快照
 
 ### 工程实践建议
 
-```python
-@dataclass(frozen=True, slots=True)
-class SamplingConfig:
-    stop_token_ids: tuple[int, ...] = ()
-```
 
 | 对象 | 推荐可变性 | 原因 |
 |---|---|---|
@@ -196,6 +249,54 @@ class SamplingConfig:
 | GenerationResult | 不可变 | 输出是完成时快照 |
 | KV cache storage | 可变 | decode 每步写入 |
 | Scheduler queues | 可变 | 请求不断迁移 |
+
+
+**配置（Configuration）是快照（Snapshot），状态（State）才允许变化。**
+
+配置污染（Configuration Pollution）的本质是 
+1. 本来应该稳定不变的配置
+2. 被后续代码修改了
+
+导致：
+
+1. 请求A影响请求B
+2. 调用方影响被调用方
+3. 测试互相影响
+
+所以设计原则
+
+1. 配置对象尽量不可变
+``` python
+@dataclass(frozen=True, slots=True) 
+class SamplingConfig:
+    temperature: float = 1.0
+    stop_token_ids: tuple[int, ...] = ()  #修改配置会报错
+```
+
+2. 入口立即快照（Snapshot）
+
+这是工程里最重要的一招,不要保存外部传进来的 list.
+
+``` python
+class SamplingConfig:
+    def __init__(self, stop_tokens):
+        self.stop_tokens = stop_tokens # 外部会修改stop_tokens
+
+class SamplingConfig:
+    def __init__(self, stop_tokens):
+        self.stop_tokens = tuple(stop_tokens) # 隔离外部影响
+```
+3. 配置和状态分离
+
+``` python
+SamplingConfig    # 不可变配置
+InferenceRequest # 请求输入
+RequestState     # 可变运行时状态
+```
+运行过程中只修改：state.generated_tokens
+
+不要修改：config.temperature
+
 
 ## 2.4 Pass-by-Object-Reference / Call by Sharing
 
@@ -315,7 +416,6 @@ update_config(sampling)
 assert sampling == (0.8, [1, 2, 3])
 ```
 对象关系：
-
 ``` python
 sampling ──> tuple
              ├──> float 0.8
@@ -357,11 +457,51 @@ shallow["stop_token_ids"].append(3)
 assert original["stop_token_ids"] == [1, 2, 3]
 assert deep["stop_token_ids"] == [1, 2]
 ```
+shallow = copy.copy(original) 执行后：
+``` python
+original ─────┐
+              ▼
+          dict A
+          ├──► list B
+          └──► dict C
+
+shallow  ───► dict D
+          ├──► list B
+          └──► dict C
+
+```
+注意dict A ≠ dict D, list B 是共享的, dict C 是共享的.
+
+**所以浅拷贝只复制第一层容器2里面的对象仍然共用**
+
+deep = copy.deepcopy(original) 执行后：
+
+``` python
+original
+    │
+    ▼
+ dict A
+ ├──► list B
+ └──► dict C
+
+deep
+    │
+    ▼
+ dict D
+ ├──► list E
+ └──► dict F
+
+A != D
+B != E
+C != F
+```
+
+
 
 ### 常见坑
 
 - `dict.copy()` 只复制一层。
-- `deepcopy` 不理解所有业务所有权。
+- `deepcopy` 不理解所有业务所有权。 
 - GPU Tensor、锁、future、文件句柄、tokenizer 和自定义扩展对象未必适合深拷贝。
 
 ### 工程实践建议
@@ -400,6 +540,10 @@ def add_stop(
 
 ## 2.7 dataclass 与 `default_factory`
 
+default_factory 不是提供默认对象，而是提供创建默认对象的方法。
+
+每个对象拥有自己的状态，而不是意外共享状态。
+
 ```python
 from dataclasses import dataclass, field
 
@@ -408,6 +552,15 @@ class RequestState:
     generated_token_ids: list[int] = field(default_factory=list)
     events: list[str] = field(default_factory=list)
 ```
+field(...)就是在告诉 dataclass：
+
+1. 这个字段请特殊处理
+
+2. 不要直接使用默认值
+
+3. 而是每次创建实例时调用 list()
+
+
 
 factory 在每次实例化时调用。
 
