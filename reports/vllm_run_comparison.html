@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vLLM 运行日志对比 · OPT-125m vs Qwen3-0.6B</title>
+<style>
+  :root{
+    --bg:#f4f6fb; --card:#ffffff; --ink:#1e293b; --muted:#64748b;
+    --line:#e3e8ef; --indigo:#4f46e5; --indigo-soft:#eef2ff;
+    --orange:#ea580c; --orange-soft:#fff7ed; --sky:#0ea5e9; --sky-soft:#e0f2fe;
+    --green:#16a34a; --amber:#d97706; --rose:#e11d48;
+    --opt:#6366f1; --qwen:#0ea5e9;
+    --shadow:0 1px 3px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.05);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:32px 24px 64px}
+  header.hero{background:linear-gradient(120deg,#4f46e5 0%,#6366f1 40%,#0ea5e9 100%);
+    border-radius:20px;padding:32px 36px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  header.hero:after{content:"";position:absolute;right:-50px;top:-50px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.10)}
+  header.hero h1{margin:0 0 6px;font-size:25px;letter-spacing:.3px}
+  header.hero p{margin:0;opacity:.92;font-size:13.5px}
+  .vs{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
+  .vchip{flex:1;min-width:230px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+    border-radius:12px;padding:12px 16px;backdrop-filter:blur(4px)}
+  .vchip .nm{font-weight:800;font-size:16px}
+  .vchip .mt{font-size:12px;opacity:.9;margin-top:2px}
+  h2.sec{font-size:19px;margin:42px 0 16px;padding-left:13px;border-left:4px solid var(--indigo);
+    display:flex;align-items:center;gap:10px}
+  h2.sec .tag{font-size:12px;font-weight:600;color:var(--indigo);background:var(--indigo-soft);padding:2px 9px;border-radius:6px}
+  h3{font-size:15px;margin:20px 0 10px;color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow);margin:14px 0}
+  .grid{display:grid;gap:14px}
+  .g4{grid-template-columns:repeat(4,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:880px){.g4,.g3,.g2{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.g4,.g3,.g2{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow)}
+  .stat .k{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.3px}
+  .stat .v{font-size:21px;font-weight:800;margin-top:3px}
+  .stat .v.opt{color:var(--opt)} .stat .v.qwen{color:var(--qwen)}
+  .stat .s{font-size:11px;color:var(--muted);margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:#f8fafc;color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.3px}
+  td code{background:#f1f5f9;padding:1px 5px;border-radius:5px;font-size:11.5px;color:#334155}
+  .pill{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700}
+  .pill.opt{background:#eef2ff;color:var(--opt)} .pill.qwen{background:#e0f2fe;color:var(--qwen)}
+  .pill.same{background:#f1f5f9;color:var(--muted)} .pill.up{background:#fef3c7;color:#b45309} .pill.dn{background:#dcfce7;color:#15803d}
+  .delta{font-weight:700} .delta.up{color:var(--rose)} .delta.dn{color:var(--green)} .delta.same{color:var(--muted)}
+  .formula{background:#0f172a;color:#e2e8f0;padding:13px 15px;border-radius:10px;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12.5px;line-height:1.85;overflow-x:auto;margin:8px 0}
+  .formula b{color:#7dd3fc} .formula .o{color:#fca5a4}
+  .out{border-radius:10px;padding:12px 14px;font-size:12.5px;line-height:1.7}
+  .out.opt{background:var(--opt-soft);border:1px solid #c7d2fe}
+  .out.qwen{background:var(--sky-soft);border:1px solid #bae6fd}
+  .out .h{font-weight:800;font-size:12px;margin-bottom:6px;letter-spacing:.3px}
+  .find{border-left:4px solid var(--amber);background:#fffbeb;border-radius:0 10px 10px 0;padding:13px 18px;margin:10px 0}
+  .find h4{margin:0 0 4px;font-size:14px}
+  .find p{margin:0;font-size:12.5px;color:#475569}
+  .find code{background:rgba(0,0,0,.06);padding:1px 5px;border-radius:4px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:4px 0 0}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  svg{display:block;max-width:100%}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--muted)}
+  .src{font-family:"SF Mono",Menlo,monospace;font-size:10.5px;color:var(--muted)}
+  ul.tight{margin:8px 0;padding-left:20px;font-size:13px} ul.tight li{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1>vLLM 运行日志对比分析</h1>
+  <p>同一台内网 GPU 节点 · 同一 vLLM <b>v0.22.0</b> 运行时 · 同一 <code style="background:rgba(255,255,255,.2);padding:1px 6px;border-radius:5px">basic.py</code> 脚本 · 仅换模型</p>
+  <div class="vs">
+    <div class="vchip"><div class="nm" style="color:#c7d2fe">① OPT-125m</div><div class="mt">125M · fp16 · base 预训练 · max_len 2048</div></div>
+    <div class="vchip"><div class="nm" style="color:#bae6fd">② Qwen3-0.6B</div><div class="mt">600M · bf16 · base 预训练 · max_len 40960 · V2 Runner</div></div>
+  </div>
+</header>
+
+<!-- 关键对比速读 -->
+<h2 class="sec">关键对比速读 <span class="tag">AT A GLANCE</span></h2>
+<div class="grid g4">
+  <div class="stat"><div class="k">每 token KV 占用</div><div class="v opt">36 KiB</div><div class="s">OPT → <span class="v qwen" style="font-size:16px">112 KiB</span> Qwen · <b>3.11×</b></div></div>
+  <div class="stat"><div class="k">KV 可缓存 token</div><div class="v opt">2.10M</div><div class="s">OPT → <span class="v qwen" style="font-size:16px">0.67M</span> Qwen · <b>÷3.14</b></div></div>
+  <div class="stat"><div class="k">最大并发(单请求满长)</div><div class="v opt">1025×</div><div class="s">OPT → <span class="v qwen" style="font-size:16px">16×</span> Qwen · <b>÷63</b></div></div>
+  <div class="stat"><div class="k">输出吞吐</div><div class="v opt">106</div><div class="s">OPT → <span class="v qwen" style="font-size:16px">489</span> Qwen · <b>×4.6</b> ⚠</div></div>
+</div>
+
+<!-- 配置差异 -->
+<h2 class="sec">配置差异 <span class="tag">CONFIG DELTAS</span></h2>
+<div class="card" style="padding:14px 18px">
+<table>
+  <tr><th>项</th><th>OPT-125m</th><th>Qwen3-0.6B</th><th>差异</th></tr>
+  <tr><td>参数量</td><td><code>125M</code></td><td><code>600M</code></td><td><span class="delta up">4.8×</span></td></tr>
+  <tr><td>dtype</td><td><span class="pill opt">torch.float16</span></td><td><span class="pill qwen">torch.bfloat16</span></td><td><span class="delta up">fp16→bf16</span></td></tr>
+  <tr><td>max_seq_len</td><td><code>2048</code></td><td><code>40960</code></td><td><span class="delta up">20×</span></td></tr>
+  <tr><td>Model Runner</td><td><span class="pill same">V1 GPUModelRunner</span></td><td><span class="pill qwen">V2 Model Runner</span></td><td><span class="delta up">新路径</span></td></tr>
+  <tr><td>权重加载源</td><td><span class="pill same">HF Hub (.pt)</span></td><td><span class="pill qwen">NFS safetensors</span></td><td><span class="delta up">本地预取</span></td></tr>
+  <tr><td>架构(注意力)</td><td>MHA（无 GQA）</td><td>GQA（KV 头压缩）</td><td><span class="delta up">GQA 引入</span></td></tr>
+  <tr><td>attention 后端</td><td colspan="2" style="text-align:center"><span class="pill same">FLASH_ATTN v2（两run一致）</span></td><td><span class="delta same">相同</span></td></tr>
+  <tr><td>并行维度 TP/PP/DP/DCP</td><td colspan="2" style="text-align:center"><span class="pill same">全 = 1（单卡单进程）</span></td><td><span class="delta same">相同</span></td></tr>
+  <tr><td>异步调度 / 分块预填充</td><td colspan="2" style="text-align:center"><span class="pill same">均开启</span></td><td><span class="delta same">相同</span></td></tr>
+  <tr><td>CUDA graph 捕获档位</td><td colspan="2" style="text-align:center"><span class="pill same">51 档 (1→512)，PIECEWISE 51 / FULL 35</span></td><td><span class="delta same">相同</span></td></tr>
+</table>
+<p class="src" style="margin:10px 0 0">注：两日志 <code>compilation_config</code> 的 <code>splitting_ops</code>（16 个自定义算子）、<code>cudagraph_capture_sizes</code>、<code>ir_op_priority</code> 完全一致 ⇒ 编译配置由 vLLM 版本（0.22.0）决定，与模型无关。</p>
+</div>
+
+<!-- KV Cache 对比 -->
+<h2 class="sec">KV Cache 对比 <span class="tag">MEMORY</span></h2>
+<div class="grid g2">
+  <div class="card">
+    <h3 style="margin-top:0">① OPT-125m（无 GQA）</h3>
+    <div class="formula"><b>每 token KV</b> = 2(K+V) × 12层 × 12头 × 64 × 2B(fp16) = <b>36 KiB</b>
+<b>Token 容量</b> = 72.11 GiB ÷ 36 KiB = <b>2,100,352</b>
+<b>并发</b>(2048/req) = 2,100,352 ÷ 2048 = <b>1025.56×</b></div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">② Qwen3-0.6B（GQA）</h3>
+    <div class="formula"><span class="o">每 token KV</span> = 2(K+V) × 28层 × 8 KV头 × 128 × 2B(bf16) = <span class="o">112 KiB</span>
+<span class="o">Token 容量</span> = 71.36 GiB ÷ 112 KiB = <span class="o">668,064</span>
+<span class="o">并发</span>(40960/req) = 668,064 ÷ 40960 = <span class="o">16.31×</span></div>
+  </div>
+</div>
+<div class="card">
+  <h3 style="margin-top:0">三维度对比（可视化）</h3>
+  <div id="kvchart" style="width:100%"></div>
+  <p class="src" style="margin:8px 0 0">每组两根柱：靛蓝=OPT-125m，天蓝=Qwen3-0.6B。KV/token 与总 token 取对数轴以同图呈现数量级差异；并发为绝对倍数。<b>并发骤降 63× 的主因是 max_seq_len 放大 20×</b>（单请求 token 需求从 2048 涨到 40960），叠加每 token KV 涨 3.11×——两者乘积 ≈ 62×，与观测吻合。</p>
+</div>
+
+<!-- 启动与编译时间 -->
+<h2 class="sec">启动 / 编译时间对比 <span class="tag">STARTUP</span></h2>
+<div class="card">
+  <div id="timechart" style="width:100%"></div>
+  <p class="src" style="margin:8px 0 0">分组柱：每组两柱（靛蓝 OPT / 天蓝 Qwen）。Qwen 因模型更大、图更复杂，<b>torch.compile 慢 1.89×</b>（13.54s→25.59s，图编译 4.71s→13.21s）、<b>CUDA graph 显存多占 2.63×</b>（0.19→0.50 GiB）；init 总时长 24.54s→44.26s。模型权重加载 0.24→1.12 GiB（4.67×，与参数量成正比）。</p>
+</div>
+
+<!-- 吞吐与输出质量 -->
+<h2 class="sec">吞吐与输出质量 <span class="tag">QUALITY</span></h2>
+<div class="grid g2">
+  <div class="card">
+    <h3 style="margin-top:0">推理吞吐（4 条短 prompt）</h3>
+    <div id="thruchart" style="width:100%"></div>
+    <div class="find" style="margin-top:10px">
+      <h4>⚠ 吞吐 4.6× 差异需谨慎解读</h4>
+      <p>Qwen 输出 489 toks/s 远高于 OPT 106 toks/s，<b>但这不意味 0.6B 比 125M"更高效"</b>。解码吞吐本应随模型变大而下降（显存带宽受限）。真正原因：① OPT 那次运行在推理期触发了 <code>_compute_slot_mapping_kernel</code> 的 <b>一次 Triton JIT 编译尖峰</b>（日志有告警），抬高了计时；② Qwen 走 <b>V2 Model Runner + bf16</b>，kernel 融合更优；③ 样本仅 4 条极短 prompt，结果被固定开销/首 token 延迟主导，<b>非干净的每 token 效率对比</b>。</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">生成质量（均为 base 预训练，无指令微调）</h3>
+    <div class="out opt" style="margin-bottom:10px"><div class="h" style="color:var(--opt)">OPT-125m — 发散、不连贯</div>
+      "Joel, my dad is my friend and we are in a relationship..."<br>
+      "...all set to open a new gateway to the most notorious terror camps in Europe..."</div>
+    <div class="out qwen" style="margin-bottom:10px"><div class="h" style="color:var(--qwen)">Qwen3-0.6B — 语法正确、语义合理</div>
+      "Bella. I am 18 years old and I'm in a high school"<br>
+      "Paris, which is famous for being a center of culture and history. France's..."</div>
+    <p class="src" style="margin:6px 0 0">同样未微调，Qwen3-0.6B（4.8× 参数 + 更现代架构 + 更大数据训练）即能产出<b>连贯、合语法</b>的续写；OPT-125m 则完全发散。这是模型规模/训练质量的差异，非流水线问题。</p>
+  </div>
+</div>
+
+<!-- 环境与版本确认 -->
+<h2 class="sec">环境与版本确认 <span class="tag">ENV</span></h2>
+<div class="card">
+  <ul class="tight">
+    <li><b>运行时确认为 v0.22.0</b>：两日志均打印 <code>Initializing a V1 LLM engine (v0.22.0)</code>，且 <code>vllmenv</code> 虚拟环境路径（<code>/slowfs/.../vllmenv/.venv/bin/python → python-3.12.5</code>）印证加载的是<b>已安装的 0.22.0 wheel</b>，与本地 git checkout <code>v0.23.1rc0</code> 源码树不一致（前轮已发现）。</li>
+    <li><b>5 个未知环境变量告警</b>：两次运行完全一致（<code>VLLM_SRC</code> 等），属内部构建/CI 变量，无害建议 <code>unset</code>。</li>
+    <li><b>权重来源差异</b>：OPT 从 HF Hub 下载（.pt，4.14s）；Qwen 从 <b>NFS</b> 读取 safetensors（1.40 GiB，8 线程预取到 page cache，8.40s 加载），反映集群共享存储布局。</li>
+    <li><b>V2 Model Runner 仅 Qwen 触发</b>：日志 <code>Using V2 Model Runner</code>（gpu_worker.py:289）只在 Qwen3 出现，OPT 走旧路径 —— 属<b>模型驱动</b>的 runner 选择，非版本差异（同 0.22.0）。</li>
+    <li><b>Qwen 运行无 Triton JIT 告警</b>：OPT 那次的 <code>_compute_slot_mapping_kernel</code> 推理期编译尖峰在 Qwen 日志中未出现（warmup 覆盖更全 / V2 runner 路径差异）。</li>
+  </ul>
+</div>
+
+<!-- 总览表 -->
+<h2 class="sec">全量指标对照表 <span class="tag">ALL METRICS</span></h2>
+<div class="card" style="padding:14px 18px">
+<table>
+  <tr><th>指标</th><th>OPT-125m</th><th>Qwen3-0.6B</th><th>比值</th></tr>
+  <tr><td>参数量</td><td>125M</td><td>600M</td><td><span class="delta up">4.8×</span></td></tr>
+  <tr><td>权重显存</td><td>0.24 GiB</td><td>1.12 GiB</td><td><span class="delta up">4.67×</span></td></tr>
+  <tr><td>每 token KV</td><td>36 KiB</td><td>112 KiB</td><td><span class="delta up">3.11×</span></td></tr>
+  <tr><td>KV cache 容量</td><td>2,100,352</td><td>668,064</td><td><span class="delta dn">÷3.14</span></td></tr>
+  <tr><td>最大并发</td><td>1025.56×</td><td>16.31×</td><td><span class="delta dn">÷62.9</span></td></tr>
+  <tr><td>模型加载耗时</td><td>12.57s</td><td>12.49s</td><td><span class="delta same">≈持平</span></td></tr>
+  <tr><td>torch.compile</td><td>13.54s</td><td>25.59s</td><td><span class="delta up">1.89×</span></td></tr>
+  <tr><td>CUDA graph 显存</td><td>0.19 GiB</td><td>0.50 GiB</td><td><span class="delta up">2.63×</span></td></tr>
+  <tr><td>init engine 总</td><td>24.54s</td><td>44.26s</td><td><span class="delta up">1.8×</span></td></tr>
+  <tr><td>输出吞吐</td><td>106.42 toks/s</td><td>489.50 toks/s</td><td><span class="delta up">4.6× ⚠</span></td></tr>
+  <tr><td>输入吞吐</td><td>43.23 toks/s</td><td>168.27 toks/s</td><td><span class="delta up">3.9× ⚠</span></td></tr>
+</table>
+</div>
+
+<footer>
+  数据来源：两次 <code>examples/basic/offline_inference/basic.py</code> 运行日志（2026-07-13 22:23 OPT / 22:30 Qwen3，内网 GPU 节点）+ vLLM 源码静态核对（git checkout v0.23.1rc0）。<br>
+  KV 容量数学：OPT 每 token 36 KiB（12层×12 MHA头×64×2B fp16）、Qwen3 每 token 112 KiB（28层×8 GQA KV头×128×2B bf16），均由日志显存÷token 数反推验证一致。<br>
+  运行时环境：<code>vllmenv</code> @ Python 3.12.5，vLLM <b>v0.22.0</b>（预编译 wheel），与源码树 v0.23.1rc0 不一致。
+</footer>
+
+</div>
+
+<script>
+var OPT={kvPer:36, kvTok:2100352, conc:1025.56, w:0.24, tc:13.54, cg:0.19, init:24.54, out:106.42, inp:43.23, load:12.57};
+var QW={kvPer:112, kvTok:668064, conc:16.31, w:1.12, tc:25.59, cg:0.50, init:44.26, out:489.50, inp:168.27, load:12.49};
+
+// ---- KV 对比图（对数轴 + 并发轴） ----
+(function(){
+  var W=1000,H=240,pad=44,n=3, groups=["KV/token (KiB)","总 token","并发 (×)"];
+  var optV=[OPT.kvPer, OPT.kvTok, OPT.conc], qwV=[QW.kvPer, QW.kvTok, QW.conc];
+  var maxLog=Math.log10(2100352);
+  var svg="<svg viewBox='0 0 "+W+" "+H+"' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='-apple-system,sans-serif'>";
+  for(var i=0;i<n;i++){
+    var cx=pad+i*(W-pad*2)/(n-1);
+    var hO=(Math.log10(optV[i])/maxLog)*(H-70);
+    var hQ=(Math.log10(qwV[i])/maxLog)*(H-70);
+    svg+="<rect x='"+(cx-34)+"' y='"+(H-30-hO)+"' width='30' height='"+hO+"' rx='3' fill='#6366f1'><title>OPT "+optV[i]+"</title></rect>";
+    svg+="<rect x='"+(cx+4)+"' y='"+(H-30-hQ)+"' width='30' height='"+hQ+"' rx='3' fill='#0ea5e9'><title>Qwen "+qwV[i]+"</title></rect>";
+    svg+="<text x='"+(cx-19)+"' y='"+(H-34-hO)+"' text-anchor='middle' font-size='10' fill='#4338ca' font-weight='700'>"+optV[i].toLocaleString()+"</text>";
+    svg+="<text x='"+(cx+19)+"' y='"+(H-34-hQ)+"' text-anchor='middle' font-size='10' fill='#0369a1' font-weight='700'>"+qwV[i].toLocaleString()+"</text>";
+    svg+="<text x='"+cx+"' y='"+(H-12)+"' text-anchor='middle' font-size='11' fill='#475569' font-weight='600'>"+groups[i]+"</text>";
+  }
+  svg+="<line x1='"+pad+"' y1='"+(H-30)+"' x2='"+(W-pad)+"' y2='"+(H-30)+"' stroke='#e3e8ef' stroke-width='1'/>";
+  svg+="</svg>";
+  document.getElementById("kvchart").innerHTML=svg;
+})();
+
+// ---- 启动时间分组柱 ----
+(function(){
+  var W=1000,H=260,pad=44;
+  var rows=[["权重加载",OPT.load,QW.load],["torch.compile",OPT.tc,QW.tc],["CUDA graph显存(GiB)",OPT.cg,QW.cg],["init 总",OPT.init,QW.init]];
+  var max=44.26, svg="<svg viewBox='0 0 "+W+" "+H+"' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='-apple-system,sans-serif'>";
+  for(var i=0;i<rows.length;i++){
+    var cx=pad+i*(W-pad*2)/(rows.length-1);
+    var hO=rows[i][1]/max*(H-70), hQ=rows[i][2]/max*(H-70);
+    svg+="<rect x='"+(cx-30)+"' y='"+(H-30-hO)+"' width='26' height='"+hO+"' rx='3' fill='#6366f1'><title>OPT "+rows[i][1]+"</title></rect>";
+    svg+="<rect x='"+(cx+4)+"' y='"+(H-30-hQ)+"' width='26' height='"+hQ+"' rx='3' fill='#0ea5e9'><title>Qwen "+rows[i][2]+"</title></rect>";
+    svg+="<text x='"+(cx-17)+"' y='"+(H-34-hO)+"' text-anchor='middle' font-size='9.5' fill='#4338ca' font-weight='700'>"+rows[i][1]+"</text>";
+    svg+="<text x='"+(cx+17)+"' y='"+(H-34-hQ)+"' text-anchor='middle' font-size='9.5' fill='#0369a1' font-weight='700'>"+rows[i][2]+"</text>";
+    svg+="<text x='"+cx+"' y='"+(H-12)+"' text-anchor='middle' font-size='10.5' fill='#475569' font-weight='600'>"+rows[i][0]+"</text>";
+  }
+  svg+="<line x1='"+pad+"' y1='"+(H-30)+"' x2='"+(W-pad)+"' y2='"+(H-30)+"' stroke='#e3e8ef'/>";
+  svg+="<rect x='"+(W-190)+"' y='4' width='12' height='12' rx='2' fill='#6366f1'/><text x='"+(W-174)+"' y='14' font-size='10' fill='#475569'>OPT-125m</text>";
+  svg+="<rect x='"+(W-90)+"' y='4' width='12' height='12' rx='2' fill='#0ea5e9'/><text x='"+(W-74)+"' y='14' font-size='10' fill='#475569'>Qwen3</text>";
+  svg+="</svg>";
+  document.getElementById("timechart").innerHTML=svg;
+})();
+
+// ---- 吞吐分组柱 ----
+(function(){
+  var W=460,H=240,pad=44;
+  var rows=[["输入",OPT.inp,QW.inp],["输出",OPT.out,QW.out]];
+  var max=489.50, svg="<svg viewBox='0 0 "+W+" "+H+"' width='100%' xmlns='http://www.w3.org/2000/svg' font-family='-apple-system,sans-serif'>";
+  for(var i=0;i<rows.length;i++){
+    var cx=pad+i*(W-pad*2)/(rows.length-1);
+    var hO=rows[i][1]/max*(H-70), hQ=rows[i][2]/max*(H-70);
+    svg+="<rect x='"+(cx-30)+"' y='"+(H-30-hO)+"' width='26' height='"+hO+"' rx='3' fill='#6366f1'><title>OPT "+rows[i][1]+"</title></rect>";
+    svg+="<rect x='"+(cx+4)+"' y='"+(H-30-hQ)+"' width='26' height='"+hQ+"' rx='3' fill='#0ea5e9'><title>Qwen "+rows[i][2]+"</title></rect>";
+    svg+="<text x='"+(cx-17)+"' y='"+(H-34-hO)+"' text-anchor='middle' font-size='9.5' fill='#4338ca' font-weight='700'>"+rows[i][1]+"</text>";
+    svg+="<text x='"+(cx+17)+"' y='"+(H-34-hQ)+"' text-anchor='middle' font-size='9.5' fill='#0369a1' font-weight='700'>"+rows[i][2]+"</text>";
+    svg+="<text x='"+cx+"' y='"+(H-12)+"' text-anchor='middle' font-size='11' fill='#475569' font-weight='600'>"+rows[i][0]+" (toks/s)</text>";
+  }
+  svg+="<line x1='"+pad+"' y1='"+(H-30)+"' x2='"+(W-pad)+"' y2='"+(H-30)+"' stroke='#e3e8ef'/>";
+  svg+="</svg>";
+  document.getElementById("thruchart").innerHTML=svg;
+})();
+</script>
+</body>
+</html>
