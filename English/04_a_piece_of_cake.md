@@ -8,26 +8,35 @@
 
 ## 发音标注图例（Pronunciation Legend）
 
-| 符号 | 名称 | 说明 | 示例 |
-|------|------|------|------|
-| ⌒ | 连读 Linking | 前字尾辅音与后字首元音拼读，或元元连读 | `a⌒lot`, `go⌒on` |
-| (schwa) | 弱读 Weak Form | 结构词元音弱化为 /ə/ 或 /ɪ/ | `t(schwa)` /tə/, `of(schwa)` /əv/ |
-| `[ ]` | 失去爆破 Unreleased Stop | /p,t,k,b,d,g/ 只作发音姿势，不送气爆破 | `no[t] problem`, `don'[t]` |
-| ⚡ | 闪音 Flap T/D | 两元音间 /t/、/d/ 快速弹舌，似轻快 /d/ | `wa⚡er`, `ci⚡y`, `pho⚡ographer` |
 
-> **文本高亮约定：** **加粗** = 生词；<u>下划线</u> = 高频口语表达；`【语法】` = 需配合第四部分学习的语法点
+| 符号      | 名称                   | 说明                         | 示例                                |
+| ------- | -------------------- | -------------------------- | --------------------------------- |
+| ⌒       | 连读 Linking           | 前字尾辅音与后字首元音拼读，或元元连读        | `a⌒lot`, `go⌒on`                  |
+| (schwa) | 弱读 Weak Form         | 结构词元音弱化为 /ə/ 或 /ɪ/         | `t(schwa)` /tə/, `of(schwa)` /əv/ |
+| `[ ]`   | 失去爆破 Unreleased Stop | /p,t,k,b,d,g/ 只作发音姿势，不送气爆破 | `no[t] problem`, `don'[t]`        |
+| ⚡       | 闪音 Flap T/D          | 两元音间 /t/、/d/ 快速弹舌，似轻快 /d/  | `wa⚡er`, `ci⚡y`, `pho⚡ographer`   |
+
+
+> **文本高亮约定：** **加粗** = 生词；++下划线++ = 高频口语表达；`【语法】` = 需配合第四部分学习的语法点
 
 ---
 
+
+
 ## 🎧 第一部分：完整英语台词（全场景精读版）
+
+
 
 ### 🏠 Section 1 — The Bet at Home（家中的赌局）
 
 **Marilyn:** I am **exhausted**.  
 *发音：* I⌒am *exhausted* /ɪɡˈzɔːstɪd/
 
-**Richard:** I knew **exercise** class is so hard. Your new **exercise** class?  
+**Richard:** my new **exercise** class is so hard. Your new **exercise** class?  
 *发音：* exercise class | so⌒hard | exercise class
+
+fitness class 健身课程  She goes to a fitness class every morning. ✅ 更常见
+workout class 健身课（最通用） I'm taking a workout class tonight. ✅ 很口语
 
 **Marilyn:** Yeah, my new advanced **exercise** class.
 
@@ -38,70 +47,112 @@
 
 **Richard:** Easy for you?
 
-**Marilyn:** In the beginners class they give you a chance t(schwa) rest between exercises, so the advanced class is non-stop.  
+**Marilyn:** In the beginners class they give you a chance t(schwa) rest between exercises, the advanced class is non-stop.  
 *发音：* give⌒you | chance⌒t(schwa) | non-stop /nɑːnˈstɑːp/
 
-**Richard:** I lift weights every morning for 60 minutes without stopping. <u>No problem.</u> Listen, Marilyn. `【语法】`Doing **aerobics** for an hour is a lot different than lifting weights.  
-*发音：* withou[t] stopping | no[t] problem | doin[g] **aerobics** | a⌒lot | liftin[g] weights
+give somebody a chance to do something 给某人一个做某事的机会
+non-stop 不停地；连续不断地
+**Richard:** I lift weights every morning for 60 minutes without stopping. ++No problem.++ 
 
-**Marilyn:** Yeah, <u>quite a bit different</u>.  
+**Marilyn:** Listen, Richard. Doing **aerobics** for an hour is a lot different than lifting weights.  
+
+aerobics class 有氧操课
+spin class  动感单车课
+cycling class 室内骑行课
+yoga class  瑜伽课
+lift weights  举重、练力量、撸铁
+a lot different than:a lot 很大程度上,表示差别非常大
+
+**Richard:**  Yeah, ++quite a bit different++.  
 *发音：* qui(te̚) a(schwa) bi[t] different
 
 **Richard:** I think **aerobics** is easy. I could work out in your class with no problem.  
 *发音：* work⌒out | with⌒no problem
+work out = 锻炼身体 I work out every day.
+这里的 could 不是过去时。而是表示：我能做到,我完全有能力.I can easily do it.
+with no problem = 完全能应付,轻轻松松.
 
-**Marilyn:** <u>You think so?</u>
+**Marilyn:** ++You think so?++
 
-**Richard:** Oh, <u>without a doubt</u>.  
+**Richard:** Oh, ++without a doubt++.  
 *发音：* withou[t] a(schwa) doubt
 
-**Marilyn:** When's the next class?
+**Richard:** When's the next class?
 
-**Richard:** Tomorrow morning at 10 o'clock. Try it.
+**Marilyn:** Tomorrow morning at 10 o'clock. Try it.
 
-**Marilyn:** Tomorrow morning after lifting weights, I'll try **aerobics**. <u>It's a snap.</u> Tomorrow morning at 10 o'clock.  
+时间表示
+
+ 9:20 → nine twenty
+
+ 10:10 → ten ten
+
+ 6:45 → six forty-five 
+
+7:05 → seven oh five
+
+**Richard:** Tomorrow morning after lifting weights, I'll try **aerobics**. ++It's a snap.++ Tomorrow morning at 10 o'clock.  
 *发音：* I'll⌒try | i[t] is a(schwa) snap
 
+after doing something: 在……之后 
+After eating breakfast... 早餐后……
+It's a snap:十分容易,轻而易举
 *(Next morning)*
 
 **Marilyn:** Are you going t(schwa) the **aerobics** class this morning?  
 *发音：* goin[g] t(schwa) th(schwa)
 
-**Richard:** <u>Of course.</u> Easy, <u>no sweat</u>.  
+**Richard:** ++Of course.++ Easy, ++no sweat++.  
 *发音：* of(schwa) course | no⌒sweat
 
-**Marilyn:** You are not going t(schwa) be able t(schwa) move after this. And the **aerobics** class... <u>are you kidding me?</u>  
+**Marilyn:** You are not going t(schwa) be able t(schwa) move after this and the **aerobics** class.
 *发音：* no[t] goin[g] t(schwa) | able⌒t(schwa) | a⚡er⌒this | kiddin[g] me
 
-**Richard:** <u>It's gonna be a piece of cake.</u>  
+be not going to be able to do:将不能做…… 
+
+move:这里不是单纯的“移动位置”，而是动弹，活动身体.
+
+**Richard:** ++It's gonna be a piece of cake.++  
 *发音：* i[t] is *gonna* /ˈɡʌnə/ | piece⌒of(schwa) cake
 
-**Marilyn:** <u>You want to bet?</u>  
+**Richard:** ++You want to bet?++  
 *发音：* wan[t] t(schwa) be[t]
 
-**Richard:** Yeah, <u>what's the bet?</u>
+**Marilyn:**  Yeah, ++what's the bet?++
 
-**Marilyn:** I bet I can go one hour in your class this morning and <u>not feel a thing</u>.  
+**Richard:** I bet I can go one hour in your class this morning and ++not feel a thing++.  
 *发音：* go⌒one | no[t] feel a(schwa) thing
+not feel a thing：毫无影响，没什么感觉，一点不累，一点不疼
 
-**Richard:** <u>The bet is on:</u> I win and you cook dinner for the entire family. Or you win and I cook dinner for the entire family.  
+**Richard:** ++The bet is on:++ I win and you cook dinner for the entire family. Or you win and I cook dinner for the entire family.  
 *发音：* be[t] is⌒on | for(schwa) th(schwa) entire | or(schwa) you
 
-**Marilyn:** <u>It's a bet.</u> Okay, call my **instructor** Jack Davis right now. His number is 555-8842. The advanced class starts at 10 o'clock. It's 9:20 now. It only takes 8 minutes by bicycle t(schwa) the **aerobics** class. Give him a call.  
+**Marilyn:** ++It's a bet.++ Okay, call my **instructor** Jack Davis right now. His number is 555-8842. The advanced class starts at 10 o'clock. It's 9:20 now. It only takes 8 minutes by bicycle t(schwa) the **aerobics** class. Give him a call.  
 *发音：* righ[t] now | starts⌒a[t] | i[t] only | t(schwa) th(schwa) | give⌒him
 
-**Richard:** *(On the phone)* Davis **Aerobics** Center for Good Health. The Jack Davis place. Jack Davis. Hello, this is Richard Stewart. My wife, Marilyn Stewart, is a member of(schwa) your program. I'd like t(schwa) come t(schwa) the ten o'clock advanced class this morning.  
+**Jack Davis:** *(On the phone)* Davis **Aerobics** Center for Good Health. The Jack Davis place. Jack Davis.
+
+**Richard:** Hello, this is Richard Stewart. My wife, Marilyn Stewart, is a member of(schwa) your program. I'd like t(schwa) come t(schwa) the ten o'clock advanced class this morning.  
 *发音：* this(schwa) is | member⌒of(schwa) | like⌒t(schwa) | come⌒t(schwa) | ten⌒o'clock
+
+is a member of: 会员，成员
+come to the class：参加课程
 
 **Jack Davis:** Oh, fine, fine. Be here a few minutes early. You need t(schwa) complete some forms before the class. Thanks.  
 *发音：* be⌒here | few⌒minutes | need⌒t(schwa) | before⌒th(schwa)
 
-**Richard:** I'm on my way over right... bye-bye.  
+Be here a few minutes early:提前几分钟到就行
+
+complete some forms: 填表
+
+**Richard:** I'm on my way over.bye-bye.  
 *发音：* on⌒my | righ[t]...
+I'm on my way over. 我马上过去。
+**Richard:** So, ++all set++. I'm going.
 
-**Richard:** So, <u>all set</u>. I'm going.
+all set：都安排妥了，准备好了。
 
-**Marilyn:** Hi, <u>see you later</u>. Good luck, um, don't forget about the bet.  
+**Marilyn:** Hi, ++see you later++. Good luck, um, don't forget about the bet.  
 *发音：* don'[t] forge[t] | abou[t] th(schwa)
 
 **Richard:** Dinner for the entire family, and that includes Susan. Don't you forget.  
@@ -109,9 +160,11 @@
 
 ---
 
+
+
 ### 🏥 Section 2 — The Physical Check & Deal（体检与意外的好差事）
 
-**Jack Davis:** Okay, Richard, that's <u>terrific</u>. Your pressure is 120 over 75, and that's fine. Stand up, please. Good. It's 122 over 80. You can sit down. When was your last complete **physical**?  
+**Jack Davis:** Okay, Richard, that's ++terrific++. Your pressure is 120 over 75, and that's fine. Stand up, please. Good. It's 122 over 80. You can sit down. When was your last complete **physical**?  
 *发音：* tha[t] is | stan[d] up | las[t] complete
 
 **Richard:** Six months ago.
@@ -130,7 +183,6 @@
 
 **Richard:** Everything. The American scene, people, places, events.
 
-
 **Jack Davis:** Did you ever think of(schwa) **photographing** an **aerobics** class?  
 *发音：* think⌒of(schwa) | pho⚡ographin[g]
 
@@ -147,9 +199,11 @@
 **Richard:** When can I **photograph** a class?
 **Jack Davis:** anytime? 
 **Richard:**  How about today?
-**Jack Davis:** <u>Terrific.</u>
+**Jack Davis:** ++Terrific.++
 
 ---
+
+
 
 ### 🛒 Section 3 — The Confession（露馅与重新应战）
 
@@ -160,7 +214,7 @@
 
 **Marilyn:** What's wrong with you? 
 
-**Richard:** Nothing. I am in excellent health. I have ideal blood pressure, a perfect heart. <u>In other words</u>, I'm in wonderful condition.  
+**Richard:** Nothing. I am in excellent health. I have ideal blood pressure, a perfect heart. ++In other words++, I'm in wonderful condition.  
 *发音：* excellen[t] | perfec[t] | in⌒other⌒words
 
 **Marilyn:** Richard, did you go t(schwa) the **aerobics** class really? Oh, don't forget t(schwa) invite Susan for dinner. And your legs don't hurt?  
@@ -168,12 +222,12 @@
 
 **Richard:** Hurt? What do you mean?
 
-**Marilyn:** What about your arms? Lift your arms up like this. And they don't hurt? <u>Not even a little?</u>  
+**Marilyn:** What about your arms? Lift your arms up like this. And they don't hurt? ++Not even a little?++  
 *发音：* wha[t] abou[t] | lif[t] your | no[t] even
 
 **Richard:** No.
 
-**Marilyn:** <u>You are in great shape.</u> <u>I can't believe it.</u> Grandpa, Ellen, Philip, Robbie, you and me... that's six. 
+**Marilyn:** ++You are in great shape.++ ++I can't believe it.++ Grandpa, Ellen, Philip, Robbie, you and me... that's six. 
 
 **Richard:** Don't forget Susan, seven.
 
@@ -191,7 +245,7 @@
 
 **Richard:** Well, um... I didn't really exercise.
 
-**Marilyn:** <u>I knew it!</u>
+**Marilyn:** ++I knew it!++
 
 **Richard:** I wanted t(schwa), but Jack Davis needed a **photographer**.
 
@@ -210,40 +264,42 @@
 
 **Richard:** What about the bet?
 
-**Marilyn:** Oh, <u>the bet is still on</u>. But you shop for the **groceries**, remember? You win and I cook dinner for the entire family. You win and I cook dinner for the entire family including Susan. Four o'clock at the advanced exercise class with me.  
+**Marilyn:** Oh, ++the bet is still on++. But you shop for the **groceries**, remember? You win and I cook dinner for the entire family. You win and I cook dinner for the entire family including Susan. Four o'clock at the advanced exercise class with me.  
 *发音：* be[t] is⌒still⌒on | shop⌒for
 
 ---
 
+
+
 ### 🏋️ Section 4 — Reality Check（真正的考验）
 
-**Richard:** This is fun. <u>Piece of cake.</u>  
+**Richard:** This is fun. ++Piece of cake.++  
 *发音：* this⌒is | piece⌒of(schwa)
 
-**Marilyn:** <u>Just wait.</u>
+**Marilyn:** ++Just wait.++
 
 *(After the class)*
 
-**Richard:** <u>I can barely move.</u>  
+**Richard:** ++I can barely move.++  
 *发音：* can⌒barely | barery /ˈberli/（barely 中 r 清晰）
 
-**Jack Davis:** All right, that's it for today. Thank you everyone, <u>see you next week</u>.  
+**Jack Davis:** All right, that's it for today. Thank you everyone, ++see you next week++.  
 *发音：* tha[t] is⌒i[t] | nex[t] week
 
 **Marilyn:** Thank you, Jack. But don't thank you. Exercise class is not so easy, huh?  
 *发音：* no[t] so⌒easy
 
-**Richard:** No, no, yeah. <u>You were right, I was wrong.</u> I'm **exhausted**, I can't move.  
+**Richard:** No, no, yeah. ++You were right, I was wrong.++ I'm **exhausted**, I can't move.  
 *发音：* you⌒were | I⌒was | can'[t] move
 
-**Marilyn:** Well, you'll do it, huh? <u>It's a piece of cake.</u>
+**Marilyn:** Well, you'll do it, huh? ++It's a piece of cake.++
 
 **Jack Davis:** Excuse me, Richard. No, you are a terrific **instructor**, Jack. Thanks, but I have a question. Is this your very first advanced **aerobics** class?  
 *发音：* excuse me | ver firs[t]
 
 **Richard:** Yes, it is.
 
-**Jack Davis:** Oh, <u>you are in great shape</u>, Richard. Very few people last in this class for the full hour the very first time. Oh, it's true, you are in great shape.  
+**Jack Davis:** Oh, ++you are in great shape++, Richard. Very few people last in this class for the full hour the very first time. Oh, it's true, you are in great shape.  
 *发音：* few⌒people | firs[t] time
 
 **Richard:** Thanks. I think we'll cook dinner together.  
@@ -251,73 +307,93 @@
 
 ---
 
+
+
 ## 📝 第二部分：生词表（Vocabulary）
 
 > 以下词汇在正文中已**加粗**标注。
 
-| 单词/短语 | 音标 | 词性 | 中文释义 | 核心用法/例句 |
-|-----------|------|------|----------|---------------|
-| **exhausted** | /ɪɡˈzɔːstɪd/ | adj. | 筋疲力竭的 | 比 tired 程度更深：I'm too **exhausted** to speak. |
-| **exercise** | /ˈeksərsaɪz/ | n./v. | 锻炼；运动 | take **exercise**；**exercise** class 健身课 |
-| **instructor** | /ɪnˈstrʌktər/ | n. | 教练，导师 | a fitness **instructor** |
-| **aerobics** | /erˈoʊbɪks/ | n. | 有氧操 | do **aerobics**；**aerobics** class |
-| **physical** | /ˈfɪzɪkl/ | n. | 体检 | annual **physical** 年度体检 |
-| **photographer** | /fəˈtɑːɡrəfər/ | n. | 摄影师 | 动词 photograph，名词 photography |
-| **photograph** | /ˈfoʊtəɡræf/ | v. | 拍摄 | **photograph** an event |
-| **advertising** | /ˈædvərtaɪzɪŋ/ | n. | 广告宣传 | photos for **advertising** |
-| **groceries** | /ˈɡroʊsəriz/ | n. | 食品杂货 | shop for **groceries**；go grocery shopping |
-| **the American scene** |  | n. | 美国社会风貌、人文景观、生活百态 |  |
-| **events** |  | n. | 活动、新闻、赛事等 |  |
+
+| 单词/短语                  | 音标             | 词性    | 中文释义             | 核心用法/例句                                      |
+| ---------------------- | -------------- | ----- | ---------------- | -------------------------------------------- |
+| **exhausted**          | /ɪɡˈzɔːstɪd/   | adj.  | 筋疲力竭的            | 比 tired 程度更深：I'm too **exhausted** to speak. |
+| **exercise**           | /ˈeksərsaɪz/   | n./v. | 锻炼；运动            | take **exercise**；**exercise** class 健身课     |
+| **instructor**         | /ɪnˈstrʌktər/  | n.    | 教练，导师            | a fitness **instructor**                     |
+| **aerobics**           | /erˈoʊbɪks/    | n.    | 有氧操              | do **aerobics**；**aerobics** class           |
+| **physical**           | /ˈfɪzɪkl/      | n.    | 体检               | annual **physical** 年度体检                     |
+| **photographer**       | /fəˈtɑːɡrəfər/ | n.    | 摄影师              | 动词 photograph，名词 photography                 |
+| **photograph**         | /ˈfoʊtəɡræf/   | v.    | 拍摄               | **photograph** an event                      |
+| **advertising**        | /ˈædvərtaɪzɪŋ/ | n.    | 广告宣传             | photos for **advertising**                   |
+| **groceries**          | /ˈɡroʊsəriz/   | n.    | 食品杂货             | shop for **groceries**；go grocery shopping   |
+| **the American scene** |                | n.    | 美国社会风貌、人文景观、生活百态 |                                              |
+| **events**             |                | n.    | 活动、新闻、赛事等        |                                              |
+
 
 ---
 
+
+
 ## 💬 第三部分：高频口语表达（Spoken English）
 
-> 以下表达在正文中已<u>下划线</u>标注。
+> 以下表达在正文中已++下划线++标注。
+
+
 
 ### 1. 形容事情轻而易举
 
-| 表达 | 含义 | 课文例句 |
-|------|------|----------|
-| <u>It's a piece of cake.</u> | 小菜一碟 | It's gonna be **a piece of cake.** |
-| <u>It's a snap.</u> | 易如反掌 | I'll try aerobics. **It's a snap.** |
-| <u>No sweat.</u> | 小意思；没问题 | Easy, **no sweat.** |
-| <u>Piece of cake.</u> | （省略 It's）太简单了 | This is fun. **Piece of cake.** |
+
+| 表达                        | 含义            | 课文例句                                |
+| ------------------------- | ------------- | ----------------------------------- |
+| ++It's a piece of cake.++ | 小菜一碟          | It's gonna be **a piece of cake.**  |
+| ++It's a snap.++          | 易如反掌          | I'll try aerobics. **It's a snap.** |
+| ++No sweat.++             | 小意思；没问题       | Easy, **no sweat.**                 |
+| ++Piece of cake.++        | （省略 It's）太简单了 | This is fun. **Piece of cake.**     |
+
 
 **场景拓展：** 别人道谢时，可回 "No sweat!"（小事一桩 / 别客气）。
 
 ### 2. 打赌相关
 
-| 表达 | 含义 | 课文例句 |
-|------|------|----------|
-| <u>You want to bet?</u> | 你想打赌吗？/ 你不信？ | **You want to bet?** |
-| <u>What's the bet?</u> | 赌注是什么？ | **What's the bet?** |
-| <u>The bet is on.</u> | 赌约成立 | **The bet is on:** I win and you cook... |
-| <u>It's a bet.</u> | 一言为定 | **It's a bet.** |
-| <u>The bet is still on.</u> | 赌约仍然有效 | Oh, **the bet is still on.** |
-| <u>not feel a thing</u> | 毫无感觉 | ...and **not feel a thing**. |
+
+| 表达                       | 含义           | 课文例句                                     |
+| ------------------------ | ------------ | ---------------------------------------- |
+| ++You want to bet?++     | 你想打赌吗？/ 你不信？ | **You want to bet?**                     |
+| ++What's the bet?++      | 赌注是什么？       | **What's the bet?**                      |
+| ++The bet is on.++       | 赌约成立         | **The bet is on:** I win and you cook... |
+| ++It's a bet.++          | 一言为定         | **It's a bet.**                          |
+| ++The bet is still on.++ | 赌约仍然有效       | Oh, **the bet is still on.**             |
+| ++not feel a thing++     | 毫无感觉         | ...and **not feel a thing**.             |
+
+
+
 
 ### 3. 态度与身体状态
 
-| 表达 | 含义 | 课文例句 |
-|------|------|----------|
-| <u>Without a doubt.</u> | 毫无疑问 | Oh, **without a doubt.** |
-| <u>Of course.</u> | 当然 | **Of course.** Easy, no sweat. |
-| <u>Are you kidding me?</u> | 你在开玩笑吧？ | ...**are you kidding me?** |
-| <u>You are in great shape.</u> | 身体状态很好 | **You are in great shape.** |
-| <u>I can barely move.</u> | 几乎动弹不得 | **I can barely move.** |
-| <u>I knew it!</u> | 我就知道！ | **I knew it!** |
-| <u>In other words</u> | 换句话说 | **In other words**, I'm in wonderful condition. |
-| <u>all set</u> | 准备就绪 | So, **all set**. I'm going. |
-| <u>see you later / next week</u> | 回头见 / 下周见 | **See you later.** ...**see you next week**. |
-| <u>Just wait.</u> | 等着瞧吧 | **Just wait.** |
-| <u>You were right, I was wrong.</u> | 你对了，我错了 | **You were right, I was wrong.** |
+
+| 表达                               | 含义        | 课文例句                                            |
+| -------------------------------- | --------- | ----------------------------------------------- |
+| ++Without a doubt.++             | 毫无疑问      | Oh, **without a doubt.**                        |
+| ++Of course.++                   | 当然        | **Of course.** Easy, no sweat.                  |
+| ++Are you kidding me?++          | 你在开玩笑吧？   | ...**are you kidding me?**                      |
+| ++You are in great shape.++      | 身体状态很好    | **You are in great shape.**                     |
+| ++I can barely move.++           | 几乎动弹不得    | **I can barely move.**                          |
+| ++I knew it!++                   | 我就知道！     | **I knew it!**                                  |
+| ++In other words++               | 换句话说      | **In other words**, I'm in wonderful condition. |
+| ++all set++                      | 准备就绪      | So, **all set**. I'm going.                     |
+| ++see you later / next week++    | 回头见 / 下周见 | **See you later.** ...**see you next week**.    |
+| ++Just wait.++                   | 等着瞧吧      | **Just wait.**                                  |
+| ++You were right, I was wrong.++ | 你对了，我错了   | **You were right, I was wrong.**                |
+
 
 ---
+
+
 
 ## 🔬 第四部分：重要语法讲解（Grammar）
 
 > 语法点在正文中以 `【语法】` 标注。
+
+
 
 ### 1. 动名词作主语（Gerund as Subject）
 
@@ -326,6 +402,8 @@
 - **公式：** Doing sth. + is + adj.
 - **例句：** Learning English is a piece of cake.
 
+
+
 ### 2. remember doing vs. remember to do
 
 - **remember doing** = 记得**做过**某事（已完成）
@@ -333,11 +411,15 @@
 - **remember to do** = 记得**要去做**某事（未完成）
   - 例句：Remember **to lock** the door.
 
+
+
 ### 3. instead of + n. / doing
 
 - **课文原句：** `【语法】`Instead of exercising, I photographed the class.
 - **规则：** of 是介词，后接名词或动名词（-ing），不接动词原形。
 - **例句：** Instead of **complaining**, let's find a solution.
+
+
 
 ### 4. quite a bit / a lot + 比较级
 
@@ -345,24 +427,36 @@
 - **规则：** quite a bit / a lot 修饰比较级，表示"……得多"。
 - **例句：** My life is quite a bit better now.
 
+
+
 ### 5. barely 的否定含义
 
 - **课文原句：** I can **barely** move.
 - **规则：** barely = almost not，本身含否定，后不接 not。
 - **对比：** I can hardly move. ✓ | I can't barely move. ✗
 
+
+
 ### 6. gonna = going to（口语缩略）
 
 - **课文原句：** It's **gonna** be a piece of cake.
 - **说明：** 非正式口语；书面写作应使用 going to。
 - 
+
+
+
 ### 7. think of doing something
 
 - **课文原句：** Did you ever think of photographing an aerobics class.
 - **说明：** think of + 名词 / 动名词(-ing)。想到,想过,考虑过
+
 ---
 
+
+
 ## ❓ 第五部分：学习问题（Study Questions）
+
+
 
 ### A. Comprehension（理解题）
 
@@ -375,6 +469,8 @@
 7. What happened when Richard finally took the advanced aerobics class at 4 o'clock?
 8. What did Jack Davis say about Richard's performance?
 
+
+
 ### B. Thinking（思考题）
 
 1. Why did Richard underestimate the aerobics class? Have you ever made a similar mistake?
@@ -383,6 +479,8 @@
 4. What is the lesson of this episode? Is it only about exercise, or is there a broader message?
 5. Jack Davis offered Richard free classes in exchange for photos. Was this a fair deal? Why or why not?
 6. At the end, Richard says "I think we'll cook dinner together." What does this suggest about how the bet ended?
+
+
 
 ### C. Speaking & Retelling（口语与复述）
 
@@ -394,6 +492,8 @@
 6. Use at least three expressions from Part 3 to describe a time when you thought something would be easy, but it wasn't.
 
 ---
+
+
 
 ## ✅ Self-Assessment（自评清单）
 
