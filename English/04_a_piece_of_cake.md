@@ -166,6 +166,14 @@ complete some forms: 填表
 
 I'm on my way over. 我马上过去。
 
+over = 到对方所在的地方，从我这里 → 到你那里 
+
+Come over tonight.今晚过来吧
+
+I'm on my way.我在路上了
+
+I'm on my way over.我正往你那边过去
+
 **Richard:** So, ++all set++. I'm going.
 
 all set：都安排妥了，准备好了。
@@ -177,6 +185,62 @@ all set：都安排妥了，准备好了。
 *发音：* tha[t] includes | don'[t] you
 
 ---
+## 单词表（Vocabulary）
+
+| 单词/短语        | 中文      |
+| ------------ | ------- |
+| exhausted    | 筋疲力尽的   |
+| advanced     | 高级的     |
+| beginner     | 初学者     |
+| instructor   | 教练      |
+| non-stop     | 不停地     |
+| aerobics     | 有氧操     |
+| lift weights | 举重、力量训练 |
+| workout      | 锻炼      |
+| bet          | 打赌      |
+| member       | 会员      |
+| entire       | 整个的     |
+| form         | 表格      |
+
+***
+
+## 口语表达（Useful Expressions）
+
+| 表达                    | 中文      |
+| --------------------- | ------- |
+| It's a piece of cake. | 小菜一碟    |
+| It's a snap.          | 轻而易举    |
+| No sweat.             | 没问题     |
+| Without a doubt.      | 毫无疑问    |
+| You think so?         | 你真这么觉得？ |
+| You want to bet?      | 敢打赌吗？   |
+| What's the bet?       | 赌什么？    |
+| The bet is on.        | 赌局开始了   |
+| It's a bet.           | 一言为定    |
+| Not feel a thing.     | 一点感觉都没有 |
+| All set.              | 一切准备好了  |
+| I'm on my way over.   | 我马上过去   |
+| See you later.        | 回头见     |
+| Work out              | 锻炼身体    |
+
+***
+
+## 重点句（Key Sentences）
+
+| 英文                                                                  | 中文             |
+| ------------------------------------------------------------------- | -------------- |
+| I am exhausted.                                                     | 我累坏了。          |
+| The advanced class is non-stop.                                     | 高级班全程不停。       |
+| I lift weights every morning for 60 minutes.                        | 我每天早上举重60分钟。   |
+| Doing aerobics for an hour is a lot different than lifting weights. | 有氧操和举重差别很大。    |
+| I could work out in your class with no problem.                     | 我上你的课完全没问题。    |
+| It's gonna be a piece of cake.                                      | 这简直是小菜一碟。      |
+| I bet I can go one hour in your class and not feel a thing.         | 我敢打赌上一小时课也不会累。 |
+| I'd like to come to the ten o'clock advanced class.                 | 我想参加10点的高级班。   |
+| You need to complete some forms before the class.                   | 上课前需要填表。       |
+| I'm on my way over.                                                 | 我马上过去。         |
+| All set. I'm going.                                                 | 一切搞定，我出发了。     |
+| Don't forget about the bet.                                         | 别忘了我们的赌约。      |
 
 
 
