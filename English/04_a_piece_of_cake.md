@@ -36,6 +36,7 @@
 *发音：* exercise class | so⌒hard | exercise class
 
 fitness class 健身课程  She goes to a fitness class every morning. ✅ 更常见
+
 workout class 健身课（最通用） I'm taking a workout class tonight. ✅ 很口语
 
 **Marilyn:** Yeah, my new advanced **exercise** class.
