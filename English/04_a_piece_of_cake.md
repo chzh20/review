@@ -51,25 +51,36 @@ workout class 健身课（最通用） I'm taking a workout class tonight. ✅ �
 *发音：* give⌒you | chance⌒t(schwa) | non-stop /nɑːnˈstɑːp/
 
 give somebody a chance to do something 给某人一个做某事的机会
+
 non-stop 不停地；连续不断地
+
 **Richard:** I lift weights every morning for 60 minutes without stopping. ++No problem.++ 
 
 **Marilyn:** Listen, Richard. Doing **aerobics** for an hour is a lot different than lifting weights.  
 
 aerobics class 有氧操课
+
 spin class  动感单车课
+
 cycling class 室内骑行课
+
 yoga class  瑜伽课
+
 lift weights  举重、练力量、撸铁
+
 a lot different than:a lot 很大程度上,表示差别非常大
+
 
 **Richard:**  Yeah, ++quite a bit different++.  
 *发音：* qui(te̚) a(schwa) bi[t] different
 
 **Richard:** I think **aerobics** is easy. I could work out in your class with no problem.  
 *发音：* work⌒out | with⌒no problem
+
 work out = 锻炼身体 I work out every day.
+
 这里的 could 不是过去时。而是表示：我能做到,我完全有能力.I can easily do it.
+
 with no problem = 完全能应付,轻轻松松.
 
 **Marilyn:** ++You think so?++
@@ -95,8 +106,11 @@ with no problem = 完全能应付,轻轻松松.
 *发音：* I'll⌒try | i[t] is a(schwa) snap
 
 after doing something: 在……之后 
+
 After eating breakfast... 早餐后……
+
 It's a snap:十分容易,轻而易举
+
 *(Next morning)*
 
 **Marilyn:** Are you going t(schwa) the **aerobics** class this morning?  
@@ -122,6 +136,7 @@ move:这里不是单纯的“移动位置”，而是动弹，活动身体.
 
 **Richard:** I bet I can go one hour in your class this morning and ++not feel a thing++.  
 *发音：* go⌒one | no[t] feel a(schwa) thing
+
 not feel a thing：毫无影响，没什么感觉，一点不累，一点不疼
 
 **Richard:** ++The bet is on:++ I win and you cook dinner for the entire family. Or you win and I cook dinner for the entire family.  
@@ -147,7 +162,9 @@ complete some forms: 填表
 
 **Richard:** I'm on my way over.bye-bye.  
 *发音：* on⌒my | righ[t]...
+
 I'm on my way over. 我马上过去。
+
 **Richard:** So, ++all set++. I'm going.
 
 all set：都安排妥了，准备好了。
