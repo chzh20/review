@@ -45,15 +45,15 @@ Robbie: How about some bacon?
 Grandpa: I made enough for an army. You going to the baseball game today? It's a perfect day for it—a little cloudy but nice and warm.  
 发音：I⌒made⌒e(nough)⌒for⌒an army /ˈɑːrmi/. You⌒going⌒to⌒the baseball⌒game /ˈbeɪsbɔːl/⌒today? It's⌒a⌒perfect⌒day for⌒it—a little⌒cloudy /ˈklaʊdi/ but⌒nice⌒and⌒warm.
 
-I made enough for an army.我做了一大堆（吃的）。夸张地说“做太多了”.
-Are you going to the baseball game today?你今天去看棒球赛吗？
-It's a perfect day for it.今天特别适合。今天特别适合做这件事.
-A little cloudy but nice and warm. 有点多云，但暖和舒服。
-nice and warm 暖暖的
-nice and clean 干干净净
-nice and quiet 安安静静
-nice and cool 凉凉爽爽
-这里的 nice and 有“令人舒服地......”的感觉。
+I made enough for an army.我做了一大堆（吃的）。夸张地说“做太多了”.  
+Are you going to the baseball game today?你今天去看棒球赛吗?  
+It's a perfect day for it.今天特别适合。今天特别适合做这件事.  
+A little cloudy but nice and warm. 有点多云，但暖和舒服。  
+nice and warm 暖暖的  
+nice and clean 干干净净  
+nice and quiet 安安静静  
+nice and cool 凉凉爽爽  
+这里的 nice and 有“令人舒服地......”的感觉.  
 
 
 Robbie: Dad and I were planning to go to the game, but he has to work today, and my friends don't want to go. It's not an important game, anyway.  
