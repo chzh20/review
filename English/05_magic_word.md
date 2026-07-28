@@ -65,21 +65,31 @@ It's not important anyway.反正也不重要
 Grandpa: Do you have any other plans for the day?  
 发音：Do⌒you⌒have⌒any⌒other plans for⌒the⌒day?
 
-Do you have ... ?这里的 have 表示：有（安排、计划、时间等）
+Do you have ... ?这里的 have 表示：有（安排、计划、时间等
+
 Do you have any plans? 你有什么计划吗？
+
 Do you have time? 你有时间吗？
+
 any other 其他的,别的
-Do you have any other questions?你还有别的问题吗？
+
+Do you have any other questions?你还有别的问题吗?
+
 for the day:今天接下来,今天剩下的时间
+
 What's your plan for the day?
+
 Do you have any plans for the weekend?
 
 Robbie: I'll work on my computer. I have a new math program, and I want to learn how to use it.  
 发音：I'll⌒work⌒on my computer /kəmˈpjuːtər/. I⌒have⌒a⌒new⌒math program /ˈproʊɡræm/⌒and I⌒want⌒to⌒learn how⌒to⌒use⌒it.
 learn how to + 动词:学习如何……
+
 learn how to drive
+
 learn how to cook
- I want to learn how to code.
+
+I want to learn how to code.
 
 
 
@@ -90,6 +100,7 @@ Robbie: Anytime. It's really easy, but, like anything, you need to **work at** i
 发音：Anytime /ˈenitaɪm/. It's⌒really⌒easy /ˈiːzi/ but like⌒anything you⌒need⌒to⌒work⌒at⌒it.
 
 work at:努力钻研、下功夫学习、持续练习某件事
+
 work on sth:研究、处理、改进某事
 
 Grandpa: This bacon is great. I love crispy bacon.  
@@ -138,12 +149,19 @@ Philip: I really **feel bad about** it, but they need me at the hospital today, 
 发音：I⌒really⌒feel⌒bad⌒about⌒it but⌒they⌒need⌒me⌒at the hospital /ˈhɑːspɪtl/⌒today⌒in the children's ward /wɔːrd/.
 
 我很抱歉不能陪 Robbie，但是医院今天需要我在儿童病房工作。
+
 feel bad about something:对某事感到内疚、难过、过意不去.
+
 这里的 they 实际上是医院/医院的同事.英语里经常用 they 泛指一个组织里的人.
+
 They want me in the office tomorrow.公司明天要我去上班。
+
 children's ward:儿童病房
+
 emergency ward:急诊病房
+
 surgical ward:外科病房
+
 
 Grandpa: I understand.  
 发音：I⌒understand /ˌʌndərˈstænd/.
@@ -217,13 +235,18 @@ Philip: How about tomorrow?
 Grandpa: Don't you have to work?  
 发音：Don'(t)⌒you⌒have⌒to⌒work?
 你不是要上班吗？
+
 否定疑问，带有说话人的预期.
+
 反应grandpa有点意外.你不是一直忙得不可开交吗？明天居然有时间?
 
 Philip: My paperwork will wait.  
 发音：My paperwork /ˈpeɪpərwɜːrk/ will⌒wait.
+
 我的文书工作可以先放一放。
+
 will wait:可以以后再做;不着急.
+
 The report can wait.报告可以晚点再写。
 
 Grandpa: Oh, Robbie will be thrilled. I am, too, Son.  
@@ -242,9 +265,12 @@ Philip: Well, what's the weather going to be like?
 
 现在天气
 What's the weather like?
+
 未来天气
 What's the weather going to be like?
+
 How's the weather going to be?
+
 What will the weather be like this weekend?
 
 Grandpa: Radio says sunny and mild.  
@@ -255,9 +281,13 @@ The weather report says...
 The forecast says...
 
 sunny and mild 晴朗舒适
+
 sunny and warm 晴朗温暖
+
 hot and sunny 又热又晒
+
 hot and humid 又热又闷
+
 scorching hot 酷热难耐
 
 Philip: Well, I'll tell Robbie. And thanks, Dad.  
@@ -266,9 +296,13 @@ Philip: Well, I'll tell Robbie. And thanks, Dad.
 Grandpa: Don't thank me. I'm just being a grandfather.  
 发音：Don'(t)⌒thank⌒me. I'm⌒jus(t)⌒being⌒a grandfather /ˈɡrænfɑːðər/.
 别谢我，我只是做一个爷爷该做的事。
+
 I'm being a grandfather.表示行为角色,我正在做一个爷爷该做的事.
+
 I am a grandfather.表示身份事实,我是爷爷.
+
 I'm just being a father.我只是在尽父亲的责任.
+
 I'm just being a friend.我只是在做朋友该做的事.
 
 
