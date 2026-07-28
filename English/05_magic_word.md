@@ -64,31 +64,20 @@ It's not important anyway.反正也不重要
 
 Grandpa: Do you have any other plans for the day?  
 发音：Do⌒you⌒have⌒any⌒other plans for⌒the⌒day?
-
-Do you have ... ?这里的 have 表示：有（安排、计划、时间等
-
-Do you have any plans? 你有什么计划吗？
-
-Do you have time? 你有时间吗？
-
-any other 其他的,别的
-
-Do you have any other questions?你还有别的问题吗?
-
-for the day:今天接下来,今天剩下的时间
-
-What's your plan for the day?
-
+Do you have ... ?这里的 have 表示：有（安排、计划、时间等）  
+Do you have any plans? 你有什么计划吗？  
+Do you have time? 你有时间吗？  
+any other 其他的,别的  
+Do you have any other questions?你还有别的问题吗?  
+for the day:今天接下来,今天剩下的时间  
+What's your plan for the day?  
 Do you have any plans for the weekend?
 
 Robbie: I'll work on my computer. I have a new math program, and I want to learn how to use it.  
 发音：I'll⌒work⌒on my computer /kəmˈpjuːtər/. I⌒have⌒a⌒new⌒math program /ˈproʊɡræm/⌒and I⌒want⌒to⌒learn how⌒to⌒use⌒it.
-learn how to + 动词:学习如何……
-
-learn how to drive
-
-learn how to cook
-
+learn how to + 动词:学习如何……  
+learn how to drive  
+learn how to cook  
 I want to learn how to code.
 
 
@@ -98,27 +87,22 @@ Grandpa: Maybe you can teach me how to **work on** a computer someday.
 
 Robbie: Anytime. It's really easy, but, like anything, you need to **work at** it.  
 发音：Anytime /ˈenitaɪm/. It's⌒really⌒easy /ˈiːzi/ but like⌒anything you⌒need⌒to⌒work⌒at⌒it.
-
-work at:努力钻研、下功夫学习、持续练习某件事
-
-work on sth:研究、处理、改进某事
+work at:努力钻研、下功夫学习、持续练习某件事  
+work on sth:研究、处理、改进某事  
 
 Grandpa: This bacon is great. I love crispy bacon.  
 发音：This⌒bacon⌒is⌒great. I⌒love crispy /ˈkrɪspi/ bacon.
 
 Grandpa: Oh, what are you doing tomorrow?  
 发音：Oh what⌒are⌒you⌒doing⌒tomorrow /təˈmɑːroʊ/?
-
-现在进行时表示已经计划好的将来安排;你明天有什么安排？
+现在进行时表示已经计划好的将来安排;你明天有什么安排？  
 
 Robbie: Nothing much.  
 发音：Nothing /ˈnʌθɪŋ/ much.
 
 Grandpa: Well, maybe your dad and I could take you fishing with us.  
 发音：Well maybe your⌒dad⌒and⌒I⌒could⌒take⌒you fishing /ˈfɪʃɪŋ/ with⌒us.
-
-take somebody + 动词-ing:带某人去做某事
-
+take somebody + 动词-ing:带某人去做某事  
 Maybe + 主语 + could + 动词原形:是英语里非常自然、礼貌的提议句型。
 
 Robbie: I'd like that, but…  
@@ -132,9 +116,8 @@ Robbie: But Dad is always so busy.
 
 Grandpa: Well, can you come fishing with me tomorrow?  
 发音：Well can⌒you⌒come fishing⌒with⌒me⌒tomorrow?
-
 come + 动词-ing:来一起做某事  
-Come fishing with us.跟我们一起去钓鱼吧
+Come fishing with us.跟我们一起去钓鱼吧  
 
 Robbie: Sure, I can.  
 发音：Sure⌒I⌒can.
@@ -142,25 +125,19 @@ Robbie: Sure, I can.
 Grandpa: Robbie says you can't take him to the game today.  
 发音：Robbie says⌒you can'(t)⌒take⌒him⌒to⌒the⌒game⌒today.
 
-take somebody to somewhere:带某人去某地
+take somebody to somewhere:带某人去某地  
 take her to the airport; take him to school
 
 Philip: I really **feel bad about** it, but they need me at the hospital today, in the children's ward.  
 发音：I⌒really⌒feel⌒bad⌒about⌒it but⌒they⌒need⌒me⌒at the hospital /ˈhɑːspɪtl/⌒today⌒in the children's ward /wɔːrd/.
 
-我很抱歉不能陪 Robbie，但是医院今天需要我在儿童病房工作。
-
-feel bad about something:对某事感到内疚、难过、过意不去.
-
-这里的 they 实际上是医院/医院的同事.英语里经常用 they 泛指一个组织里的人.
-
-They want me in the office tomorrow.公司明天要我去上班。
-
-children's ward:儿童病房
-
-emergency ward:急诊病房
-
-surgical ward:外科病房
+我很抱歉不能陪 Robbie，但是医院今天需要我在儿童病房工作。  
+feel bad about something:对某事感到内疚、难过、过意不去.  
+这里的 they 实际上是医院/医院的同事.英语里经常用 they 泛指一个组织里的人.  
+They want me in the office tomorrow.公司明天要我去上班。  
+children's ward:儿童病房  
+emergency ward:急诊病房  
+surgical ward:外科病房  
 
 
 Grandpa: I understand.  
@@ -191,10 +168,10 @@ Philip: Oh, the usual problems.
 Grandpa: You're working pretty hard these days.  
 发音：You're working⌒pretty⌒hard these⌒days.
 
-你最近工作挺辛苦的。
-pretty = quite = fairly:相当
-pretty busy; pretty hard 挺努力/挺辛苦
-these days:这段时间,最近
+你最近工作挺辛苦的。  
+pretty = quite = fairly:相当  
+pretty busy; pretty hard 挺努力/挺辛苦  
+these days:这段时间,最近  
 
 Philip: I guess I am.  
 发音：I⌒guess⌒I⌒am.
@@ -202,9 +179,9 @@ Philip: I guess I am.
 Grandpa: When did you last go fishing with Robbie?  
 发音：When⌒did⌒you⌒last⌒go⌒fishing⌒with Robbie?
 
-When did + 主语 + 动词原形?:询问过去时间的标准句型
-last:最近一次、上一次.
-When did you last see your parents?
+When did + 主语 + 动词原形?:询问过去时间的标准句型  
+last:最近一次、上一次.  
+When did you last see your parents?  
 
 Philip: I remember exactly. It was on his birthday, June second, two years ago. We didn't catch anything.  
 发音：I⌒remember exactly /ɪɡˈzæktli/. It⌒was⌒on his⌒birthday June second two⌒years⌒ago. We⌒did(n)'(t)⌒catch⌒anything /ˈeniθɪŋ/.
@@ -222,9 +199,9 @@ Grandpa: Remember catching your first fish?
 Philip: How can I forget? I fell out of the boat! We had some good times together.  
 发音：How⌒can⌒I⌒forget /fərˈɡet/? I⌒fell⌒out⌒of⌒the⌒boat! We⌒had⌒some⌒good⌒times⌒together.
 
-How can I forget?:我怎么会忘呢？/当然记得！
-fall out of something:从……掉下去
-some good times:很多开心的时刻;很多美好的回忆. good times强调一段时期的美好回忆
+How can I forget?:我怎么会忘呢？/当然记得  
+fall out of something:从……掉下去  
+some good times:很多开心的时刻;很多美好的回忆. good times强调一段时期的美好回忆  
 
 Grandpa: Yes, we did. Maybe we should do it again.  
 发音：Yes we⌒did. Maybe we should⌒do⌒it⌒again.
@@ -234,20 +211,16 @@ Philip: How about tomorrow?
 
 Grandpa: Don't you have to work?  
 发音：Don'(t)⌒you⌒have⌒to⌒work?
-你不是要上班吗？
-
-否定疑问，带有说话人的预期.
-
-反应grandpa有点意外.你不是一直忙得不可开交吗？明天居然有时间?
+你不是要上班吗？  
+否定疑问，带有说话人的预期.  
+反应grandpa有点意外.你不是一直忙得不可开交吗？明天居然有时间?  
 
 Philip: My paperwork will wait.  
 发音：My paperwork /ˈpeɪpərwɜːrk/ will⌒wait.
 
-我的文书工作可以先放一放。
-
-will wait:可以以后再做;不着急.
-
-The report can wait.报告可以晚点再写。
+我的文书工作可以先放一放.  
+will wait:可以以后再做;不着急.  
+The report can wait.报告可以晚点再写.  
 
 Grandpa: Oh, Robbie will be thrilled. I am, too, Son.  
 发音：Oh Robbie will⌒be thrilled /θrɪld/. I⌒am⌒too⌒Son.
@@ -263,46 +236,34 @@ like old times:像从前一样;重温旧日时光
 Philip: Well, what's the weather going to be like?  
 发音：Well what's⌒the weather⌒going⌒to⌒be like?
 
-现在天气
-What's the weather like?
-
-未来天气
-What's the weather going to be like?
-
-How's the weather going to be?
-
-What will the weather be like this weekend?
+现在天气  
+What's the weather like?  
+未来天气  
+What's the weather going to be like?  
+How's the weather going to be?  
+What will the weather be like this weekend?  
 
 Grandpa: Radio says sunny and mild.  
 发音：Radio /ˈreɪdioʊ/ says⌒sunny⌒and mild /maɪld/.
 
-The radio says...
-The weather report says...
-The forecast says...
-
-sunny and mild 晴朗舒适
-
-sunny and warm 晴朗温暖
-
-hot and sunny 又热又晒
-
-hot and humid 又热又闷
-
-scorching hot 酷热难耐
+The radio says...  
+The weather report says...  
+The forecast says...  
+sunny and mild 晴朗舒适  
+sunny and warm 晴朗温暖  
+hot and sunny 又热又晒  
+hot and humid 又热又闷  
+scorching hot 酷热难耐  
 
 Philip: Well, I'll tell Robbie. And thanks, Dad.  
 发音：Well I'll⌒tell Robbie. And⌒thanks Dad.
 
 Grandpa: Don't thank me. I'm just being a grandfather.  
 发音：Don'(t)⌒thank⌒me. I'm⌒jus(t)⌒being⌒a grandfather /ˈɡrænfɑːðər/.
-别谢我，我只是做一个爷爷该做的事。
-
-I'm being a grandfather.表示行为角色,我正在做一个爷爷该做的事.
-
-I am a grandfather.表示身份事实,我是爷爷.
-
-I'm just being a father.我只是在尽父亲的责任.
-
+别谢我，我只是做一个爷爷该做的事.  
+I'm being a grandfather.表示行为角色,我正在做一个爷爷该做的事.  
+I am a grandfather.表示身份事实,我是爷爷.  
+I'm just being a father.我只是在尽父亲的责任.  
 I'm just being a friend.我只是在做朋友该做的事.
 
 
